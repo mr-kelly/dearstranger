@@ -264,7 +264,7 @@ form p {
 		line-height: 27px;
 		font-size: 14px;
 		padding: 0px 5px;
-		border-top: 1px dotted #7F7F7F;
+		border-bottom: 1px dotted #7F7F7F;
 		color: #333;
 	}
 	.sidebar_widget_content {
@@ -298,7 +298,22 @@ form p {
 			.user_widget_control ul li {
 				margin: 5px 0 0 0;
 			}
+	
+	/**
+	 *	边栏的用户列表
+	 */
+	.sidebar_users_list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
 		
+		.sidebar_users_list li {
+			
+		}
+			.sidebar_users_list li img {
+				
+			}
 	
 	
 #ad {

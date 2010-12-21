@@ -20,8 +20,10 @@
 			}
 			
 			// 赋予t_sina api原来的用户信息数组
-			$this->load->library('t_sina');
-			$user['t_sina_profile'] = $this->t_sina->getSelf(); // 知识获得自己
+			// 性能地下，取消这个功能..
+			
+			//$this->load->library('t_sina');
+			//$user['t_sina_profile'] = $this->t_sina->getSelf(); // 知识获得自己
 			
 			// 赋予有feel指数
 			$this->load->model('feel_model');

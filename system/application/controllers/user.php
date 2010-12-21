@@ -185,6 +185,21 @@
 				$this->form_validation->set_rules('hobby','hobby', 'xss_clean|trim');
 				$this->form_validation->set_rules('description','description', 'xss_clean|trim');
 				
+				$this->form-validation->set_rules('education', '教育', 'xss_clean|trim');
+				$this->form-validation->set_rules('job', '职业', 'xss_clean|trim');
+				$this->form-validation->set_rules('salary', '月薪', 'xss_clean|trim');
+				$this->form-validation->set_rules('figure', '体型', 'xss_clean|trim');
+				$this->form-validation->set_rules('like_books', '喜爱书籍', 'xss_clean|trim');
+				$this->form-validation->set_rules('like_music', '喜爱音乐', 'xss_clean|trim');
+				$this->form-validation->set_rules('like_sports', '喜爱运动', 'xss_clean|trim');
+				$this->form-validation->set_rules('like_movies', '喜爱电影', 'xss_clean|trim');
+				$this->form-validation->set_rules('like_personages', '喜爱人物', 'xss_clean|trim');
+				$this->form-validation->set_rules('motto', '座右铭', 'xss_clean|trim');
+				$this->form-validation->set_rules('school_unit', '学校/单位', 'xss_clean|trim');
+				
+				
+				
+				
 				if ( !$this->form_validation->run() ) {
 					// 表单验证失败~?
 					$feedback .= validation_errors();
@@ -195,25 +210,34 @@
 					//判断, 不存在profile, 创建 或 修改 ~
 					
 					$this->user_model->create_or_update_user_profile( $current_user['id'],  array(
-						'nickname' => $this->form_validation->set_value('nickname'),
-						'province_id' => $this->form_validation->set_value('province_id'),
-						'city_id' => $this->form_validation->set_value('city_id'),
-						'birth' => $this->form_validation->set_value('birth'),
-						'love' => $this->form_validation->set_value('love'),  // 恋爱状态
-						'gender' => $this->form_validation->set_value('gender'),
-						'height' => $this->form_validation->set_value('height'),
-						'face' => $this->form_validation->set_value('face'),
-						'phone' => $this->form_validation->set_value('phone'),
-						'qq' => $this->form_validation->set_value('qq'),
-						'msn' => $this->form_validation->set_value('msn'),
-						'website' => $this->form_validation->set_value('website'),
-						'target' => $this->form_validation->set_value('target'),
-						'hobby' => $this->form_validation->set_value('hobby'),
-						'description' => $this->form_validation->set_value('description'),
+
 						
-						// 自动生成的
-						'constellation' => $this->humanize->constellation( $this->form_validation->set_value('birth') ),
-						'age' => $this->humanize->age( $this->form_validation->set_value('birth') ),
+
+						
+						// Profile Conetent ， 所有profile字段为json储存在数据库!
+						'content' => json_encode( array(
+							'nickname' => $this->form_validation->set_value('nickname'),
+							'province_id' => $this->form_validation->set_value('province_id'),
+							'city_id' => $this->form_validation->set_value('city_id'),
+							'birth' => $this->form_validation->set_value('birth'),
+							'love' => $this->form_validation->set_value('love'),  // 恋爱状态
+							'gender' => $this->form_validation->set_value('gender'),
+							'height' => $this->form_validation->set_value('height'),
+							'face' => $this->form_validation->set_value('face'),
+							'phone' => $this->form_validation->set_value('phone'),
+							'qq' => $this->form_validation->set_value('qq'),
+							'msn' => $this->form_validation->set_value('msn'),
+							'website' => $this->form_validation->set_value('website'),
+							'target' => $this->form_validation->set_value('target'),
+							'hobby' => $this->form_validation->set_value('hobby'),
+							'description' => $this->form_validation->set_value('description'),
+							
+							
+							
+							// 自动生成的
+							'constellation' => $this->humanize->constellation( $this->form_validation->set_value('birth') ),
+							'age' => $this->humanize->age( $this->form_validation->set_value('birth') ),
+						)),
 					) );
 					
 					$feedback .= '<p>用户资料已成功修改!</p>';
@@ -237,7 +261,7 @@
 			$this->load->model('user_model');
 			$random_users = $this->user_model->get_random_users();
 			
-			kk_show_view('general/users_list_view', array( 'users_list'=>$random_users)) ;
+			kk_show_view('general/users_list_view', array( 'users_list'=>$random_users,)) ;
 		}
 		
 		/**
@@ -251,6 +275,7 @@
 		}
 		/**
 		 *	获取当前登录用户，  谁对他有feel的 ajax显示页
+		 			$more_btn ～  是否显示“寻找更多”按钮
 		 */
 		 function ajax_from_feel() {
 		 	login_redirect();
@@ -260,7 +285,7 @@
 		 	$this->load->model('feel_model');
 		 	$from_feel_user = $this->feel_model->from_feel_people( $current_user['id'] );
 		 	
-		 	kk_show_view('general/users_list_view', array( 'users_list' => $from_feel_user ) );
+		 	kk_show_view('general/users_list_view', array( 'users_list' => $from_feel_user,'more_btn'=>false, ) );
 		 	
 		 	
 		 }
@@ -275,7 +300,7 @@
 		 	$this->load->model('feel_model');
 		 	$to_feel_user = $this->feel_model->to_feel_people( $current_user['id'] );
 		 	
-		 	kk_show_view('general/users_list_view', array( 'users_list' => $to_feel_user ) );
+		 	kk_show_view('general/users_list_view', array( 'users_list' => $to_feel_user, 'more_btn'=>false, ) );
 		 	
 		 }
 		 

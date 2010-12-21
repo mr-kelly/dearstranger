@@ -1,3 +1,9 @@
+					<?php if ( !isset($more_btn) || $more_btn ): ?>
+					<div>
+						<a href="<?=site_url('search');?>" class="btn"><span><span>寻找更多意中人</span></span></a>
+					</div>
+					<?php endif; ?>
+
 					<?php
 						foreach( $users_list as $user ):
 					?>

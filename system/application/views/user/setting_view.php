@@ -45,10 +45,7 @@
 						<label>性别:</label>
 						<select name="gender">
 							<?php
-								$genders = array(
-									'男',
-									'女',
-								);
+								$genders = $ci->config->item('profile_genders');
 								foreach( $genders as $gender ):
 							?>
 								<option <?= ( $current_user['profile']['gender'] == $gender ) ? 'selected="selected"' : ''; ?>><?=$gender;?></option>
@@ -130,14 +127,7 @@
 					<label>恋爱状态</label>
 					<select name="love">
 						<?php
-							$loves = array(
-								'单身 不想交朋友',
-								'单身',
-								'未婚', // 代表非单身未婚
-								'恋爱中',
-								'恋爱中 想交朋友',
-								'已婚',
-							);
+							$loves = $ci->config->item('profile_loves');
 							foreach ( $loves as $love ):
 						?>
 						
@@ -155,20 +145,7 @@
 					<label>身高</label>
 					<select title="你的身高所处的范围" name="height">
 						<?php
-							$heights = array(
-								'196-200cm',
-								'191-195cm',
-								'186-190cm',
-								'181-185cm',
-								'176-180cm',
-								'171-175cm',
-								'166-170cm',
-								'161-165cm',
-								'156-160cm',
-								'151-155cm',
-								'146-150cm',
-								'141-145cm',	
-							);
+							$heights = $ci->config->item('profile_heights');
 							
 							foreach ( $heights as $height ):
 						?>
@@ -183,13 +160,8 @@
 					<label>相貌</label>
 					<select name="face">
 						<?php
-							$faces = array(
-								'倾国倾城',
-								'还不错',
-								'大众脸',
-								'马马虎虎',
-								'丑.....',
-							);
+							$faces = $ci->config->item('profile_faces');
+							
 							foreach ( $faces as $face ):
 						?>
 							<option  <?= ( $current_user['profile']['face'] == $face ) ? 'selected="selected"' : ''; ?>><?=$face;?></option>
@@ -210,13 +182,8 @@
 					<label>交友目的</label>
 					<select name="target">
 						<?php
-							$targets = array(
-								'普通朋友',
-								'谈恋爱',
-								'结婚',
-								'交友',
-								'其它',
-							);
+							$targets = $ci->config->item('profile_targets');
+							
 							foreach ( $targets as $target ):
 						?>
 							<option <?=( $current_user['profile']['target'] == $target ) ? 'selected="selected"' : ''; ?>><?=$target;?></option>
@@ -237,41 +204,52 @@
 				
 				
 				
-				
+				<!-- 未设置后台-->
 				<p>
 					<label>学历</label>
+					<input type="text" name="education" />
 				</p>
 				<p>
 					<label>职业</label>
+					<input type="text" name="job" />
 				</p>
 				<p>
 					<label>月薪</label>
+					<input type="text" name="salary" />
 				</p>
 				<p>
 					<label>身型</label>
+					<input type="text" name="figure" />
 				</p>
 				
 
 				<p>
 					<label>喜爱书籍</label>
+					<input type="text" name="like_books" />
 				</p>
 				<p>
 					<label>喜爱音乐</label>
+					<input type="text" name="like_music" />
 				</p>
 				<p>
 					<label>喜爱运动</label>
+					<input type="text" name="like_sports" />
 				</p>
 				<p>
 					<label>喜爱电影</label>
+					<input type="text" name="like_movies" />
 				</p>
 				<p>
-					<label>喜爱名人</label>
+					<label>喜爱人物</label>
+					<input type="text" name="like_personages" />
 				</p>
 				<p>
 					<label>座右铭</label>
+					<input type="text" name="motto" />
 				</p>
 				<p>
 					<label>所在学校/单位</label>
+					<input type="text" name="school_unit" />
 				</p>
 				
 				

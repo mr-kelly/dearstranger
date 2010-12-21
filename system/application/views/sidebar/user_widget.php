@@ -5,7 +5,7 @@
 						if ( is_t_sina_logined() ) : 
 							$me = get_user();
 					?>
-						Hi, @<?= $me['t_sina_profile']['screen_name'];?>
+						Hi, @<?= $me['profile']['nickname'];?>
 						
 					<?php else: ?>
 						连接你的微博
@@ -78,4 +78,13 @@
 				
 				</div>
 
+			</div>
+			
+			
+			<div class="sidebar_widget">
+				<div class="sidebar_widget_content">
+					<a href="#" class="tooltip btn" title="随机匹配一位对象，看缘分了！">
+						<span><span>随缘吧</span></span>
+					</a>
+				</div>
 			</div>

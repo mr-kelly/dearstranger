@@ -10,6 +10,61 @@ $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 $config['comment_when_feel'] = 'Hi. 「%s」 在Single Club上选择了对你“有feel”，你可以点击链接 %s 看看他的资料、照片哦。';
 
 $config['avatar_path'] = './static/upload/';
+
+
+
+$config['profile_genders'] =  array(
+									'男',
+									'女',
+								);
+								
+$config['profile_loves'] = array(
+								'单身 不想交朋友',
+								'单身',
+								'未婚', // 代表非单身未婚
+								'恋爱中',
+								'恋爱中 想交朋友',
+								'已婚',
+							);
+							
+$config['profile_heights'] = array(
+								'196-200cm',
+								'191-195cm',
+								'186-190cm',
+								'181-185cm',
+								'176-180cm',
+								'171-175cm',
+								'166-170cm',
+								'161-165cm',
+								'156-160cm',
+								'151-155cm',
+								'146-150cm',
+								'141-145cm',	
+							);
+							
+							
+$config['profile_faces'] =  array(
+								'倾国倾城',
+								'还不错',
+								'大众脸',
+								'马马虎虎',
+								'丑.....',
+							);
+							
+$config['profile_targets'] = array(
+								'普通朋友',
+								'谈恋爱',
+								'结婚',
+								'交友',
+								'其它',
+							);
+							
+$config['profile_constellation'] = array(
+										
+									);
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
