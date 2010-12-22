@@ -185,17 +185,17 @@
 				$this->form_validation->set_rules('hobby','hobby', 'xss_clean|trim');
 				$this->form_validation->set_rules('description','description', 'xss_clean|trim');
 				
-				$this->form-validation->set_rules('education', '教育', 'xss_clean|trim');
-				$this->form-validation->set_rules('job', '职业', 'xss_clean|trim');
-				$this->form-validation->set_rules('salary', '月薪', 'xss_clean|trim');
-				$this->form-validation->set_rules('figure', '体型', 'xss_clean|trim');
-				$this->form-validation->set_rules('like_books', '喜爱书籍', 'xss_clean|trim');
-				$this->form-validation->set_rules('like_music', '喜爱音乐', 'xss_clean|trim');
-				$this->form-validation->set_rules('like_sports', '喜爱运动', 'xss_clean|trim');
-				$this->form-validation->set_rules('like_movies', '喜爱电影', 'xss_clean|trim');
-				$this->form-validation->set_rules('like_personages', '喜爱人物', 'xss_clean|trim');
-				$this->form-validation->set_rules('motto', '座右铭', 'xss_clean|trim');
-				$this->form-validation->set_rules('school_unit', '学校/单位', 'xss_clean|trim');
+				$this->form_validation->set_rules('education', '教育', 'xss_clean|trim');
+				$this->form_validation->set_rules('job', '职业', 'xss_clean|trim');
+				$this->form_validation->set_rules('salary', '月薪', 'xss_clean|trim');
+				$this->form_validation->set_rules('figure', '体型', 'xss_clean|trim');
+				$this->form_validation->set_rules('like_books', '喜爱书籍', 'xss_clean|trim');
+				$this->form_validation->set_rules('like_music', '喜爱音乐', 'xss_clean|trim');
+				$this->form_validation->set_rules('like_sports', '喜爱运动', 'xss_clean|trim');
+				$this->form_validation->set_rules('like_movies', '喜爱电影', 'xss_clean|trim');
+				$this->form_validation->set_rules('like_personages', '喜爱人物', 'xss_clean|trim');
+				$this->form_validation->set_rules('motto', '座右铭', 'xss_clean|trim');
+				$this->form_validation->set_rules('school_unit', '学校/单位', 'xss_clean|trim');
 				
 				
 				
@@ -232,6 +232,17 @@
 							'hobby' => $this->form_validation->set_value('hobby'),
 							'description' => $this->form_validation->set_value('description'),
 							
+							'education' => $this->form_validation->set_value('education'),
+							'job' => $this->form_validation->set_value('job'),
+							'salary' => $this->form_validation->set_value('salary'),
+							'figure' => $this->form_validation->set_value('figure'),
+							'like_books' => $this->form_validation->set_value('like_books'),
+							'like_music' => $this->form_validation->set_value('like_music'),
+							'like_sports' => $this->form_validation->set_value('like_sports'),
+							'like_movies' => $this->form_validation->set_value('like_movies'),
+							'like_personages' => $this->form_validation->set_value('like_personages'),
+							'motto' => $this->form_validation->set_value('motto'),
+							'school_unit' => $this->form_validation->set_value('school_unit'),
 							
 							
 							// 自动生成的

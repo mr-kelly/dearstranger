@@ -6,6 +6,7 @@
 
 $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 
+
 // 当评论了对方时，通知对方的评论~
 $config['comment_when_feel'] = 'Hi. 「%s」 在Single Club上选择了对你“有feel”，你可以点击链接 %s 看看他的资料、照片哦。';
 

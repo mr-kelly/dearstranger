@@ -24,7 +24,7 @@
 						无需注册「亲爱陌生人」，连接你的新浪微博就可使用。
 					</p>
 					<div class="center">
-						<a href="<?=$ci->t_sina->getAuthorizeURL( oauth_callback() );?>">
+						<a href="<?=$ci->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth') );?>">
 							<img src="<?=site_url('static/images/t_sina_login_btn.png');?>" />
 						</a>
 					</div>

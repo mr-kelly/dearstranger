@@ -14,7 +14,7 @@
 		</p>
 		
 		<div style="margin-left:30px;">
-			<a class="tooltip" title="用你的新浪微博帐号登录，无需输入帐号密码" href="<?=$ci->t_sina->getAuthorizeURL( oauth_callback() );?>">
+			<a class="tooltip" title="用你的新浪微博帐号登录，无需输入帐号密码" href="<?=$ci->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth')  );?>">
 				<img src="<?=site_url('static/images/t_sina_login_btn.png');?>" />
 			</a>
 		</div>
