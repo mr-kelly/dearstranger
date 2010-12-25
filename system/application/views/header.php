@@ -14,30 +14,30 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />  
 	
 	<script type="text/javascript">
-		var $home_page = "<?=site_url('/');?>";
+		var $home_page = "<?=static_url('/');?>";
 	</script>
-	<script type="text/javascript" src="<?=site_url('static/js/lib.js');?>"></script>
+	<script type="text/javascript" src="<?=static_url('js/lib.js');?>"></script>
 	
 	
 	<!--j UI -->
-	<script type="text/javascript" src="<?=site_url('static/js/ui/js/jquery-ui-1.8.4.min.js');?>"></script>
-	<link href="<?=site_url('static/js/ui/css/pepper-grinder/jquery-ui-1.8.6.custom.css');?>" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="<?=static_url('js/ui/js/jquery-ui-1.8.4.min.js');?>"></script>
+	<link href="<?=static_url('js/ui/css/pepper-grinder/jquery-ui-1.8.6.custom.css');?>" type="text/css" rel="stylesheet" />
 	
 
 	<!--tipsy-->
-	<script type="text/javascript" src="<?=site_url('static/js/tipsy/jquery.tipsy.js');?>"></script>
-	<link href="<?=site_url('static/js/tipsy/tipsy.css');?>" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="<?=static_url('js/tipsy/jquery.tipsy.js');?>"></script>
+	<link href="<?=static_url('js/tipsy/tipsy.css');?>" type="text/css" rel="stylesheet" />
 	
 	<!--input tips-->
-	<script type="text/javascript" src="<?=site_url('static/js/jquery.input_tips.js');?>"></script>
+	<script type="text/javascript" src="<?=static_url('js/jquery.input_tips.js');?>"></script>
 	
-	<script type="text/javascript" src="<?=site_url('static/js/global.js');?>"></script>
+	<script type="text/javascript" src="<?=static_url('js/global.js');?>"></script>
 	
-	<link href="<?=site_url('static/css/style.css');?>" type="text/css" rel="stylesheet" />
-	<link href="<?=site_url('static/css/decorator.css');?>" type="text/css" rel="stylesheet" />
+	<link href="<?=static_url('css/style.css');?>" type="text/css" rel="stylesheet" />
+	<link href="<?=static_url('css/decorator.css');?>" type="text/css" rel="stylesheet" />
 	
-		<link rel="stylesheet" type="text/css" media="all" href="<?=site_url('static/');?>/js/jquery.imgareaselect/css/imgareaselect-animated.css" /> 
-		<script type="text/javascript" src="<?=site_url('static/js/jquery.imgareaselect/scripts/jquery.imgareaselect.min.js');?>"></script>
+		<link rel="stylesheet" type="text/css" media="all" href="<?=static_url('');?>/js/jquery.imgareaselect/css/imgareaselect-animated.css" /> 
+		<script type="text/javascript" src="<?=static_url('js/jquery.imgareaselect/scripts/jquery.imgareaselect.min.js');?>"></script>
 		
 
 

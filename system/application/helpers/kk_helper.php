@@ -35,6 +35,15 @@
 		}
 	}
 	
+	function static_url($url) {
+		$ci =& get_instance();
+		return $ci->config->item('static_url') . $url;
+	}
+	
+	//function base_url( $url ) {
+	//	$ci =& get_instance();
+	//	return $ci->config->item('base_url') . $url;
+	//}
 	
 	/**
 	 *	判断当前登录用户是否已经"有feel"过另一用户~

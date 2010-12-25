@@ -79,6 +79,8 @@ $config['profile_constellation'] = array(
 */
 $config['base_url']	= "/xxmm/";
 
+$config['static_url'] = $config['base_url'] . 'static/';
+ 
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -89,7 +91,7 @@ $config['base_url']	= "/xxmm/";
 | variable so that it is blank.
 |
 */
-$config['index_page'] = "";
+$config['index_page'] = "index.php";
 
 /*
 |--------------------------------------------------------------------------
