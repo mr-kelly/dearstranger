@@ -145,12 +145,21 @@ form p {
 			float: left;
 			width: 120px;
 		}
-		#menu a {
-			color: #FFF;
+		#menu a, #menu a:link, #menu a:active {
+			color: #333;
 			display:block;
 			width: 100%;
 			height: 100%;
 			text-align:center;
+			font-size: 14px;
+			border-left: 1px solid #CCC;
+		}
+		#menu a:hover {
+			background: #920000;
+			color: #FFF;
+		}
+		#menu li:first-child a {
+			border: none;
 		}
 	
 #wrapper {
@@ -173,6 +182,7 @@ form p {
 #container {
 	width: 100%;
 	min-height: 500px;
+	padding: 20px 0 0 0;
 }
 
 

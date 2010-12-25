@@ -84,6 +84,22 @@
 		}
 		
 		
+		/**
+		 *	新浪轉接到新浪授權頁面～
+		 
+		 		因為oauth_token授權頁面是有時間限制的，所以頁面不刷新後一段時間，用戶按“連接微博”，會出錯，
+		 		
+		 		所以專門獨設一個action來處理轉接~
+		 */
+		function authorize_link() {
+			$this->load->library('t_sina');
+			$authorize_url = $this->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth') );
+			
+			
+			redirect( $authorize_url );
+		}
+		
+		
 		function test() {
 			$this->load->library('T_sina');
 			// $weibo = $this->t_sina->getWeibo();
