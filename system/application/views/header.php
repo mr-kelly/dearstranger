@@ -15,6 +15,7 @@
 	
 	<script type="text/javascript">
 		var $home_page = "<?=site_url('/');?>";
+		var $ajax_get_cities = "<?=site_url('user/ajax_get_cities/');?>";
 	</script>
 	<script type="text/javascript" src="<?=static_url('js/lib.js');?>"></script>
 	
@@ -71,6 +72,7 @@
 		<li><a title="回到「心动」的首页" class="tooltip" href="<?=site_url('/');?>">首页</a></li>
 		<li><a title="查看心动指数排行榜" class="tooltip" href="<?=site_url('ranking');?>">排行</a></li>
 		<li><a title="筛选城市、资料、身高、样貌，寻觅意中的她" class="tooltip" href="<?=site_url('search');?>">寻觅</a></li>
+		<li><a title="邀请你的死党、心仪对象来到心动网络！" class="tooltip" href="<?=site_url('about/invite');?>">邀请朋友</a></li>
 	</ul>
 	<h2><a href="<?=site_url('/');?>">心动网 - 微博单身交友，恋爱2.0，</a></h2>
 	

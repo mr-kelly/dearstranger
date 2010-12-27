@@ -64,7 +64,7 @@
 				
 					// 上传成功，处理，并转到切图视图
 					$upload_data = $this->upload->data();
-					$avatar_url = site_url('static/upload/' . $user['id'] . '.png');
+					$avatar_url = static_url('upload/' . $user['id'] . '.png');
 					
 					// 上传成功，设置用户的头像网址
 					$this->load->model('user_model');
@@ -231,7 +231,7 @@
 						'school_unit' => $this->form_validation->set_value('school_unit'),
 						
 						// Profile Conetent ， 所有profile字段为json储存在数据库!
-						'content' => json_encode( array(
+						//'content' => json_encode( array(
 							'nickname' => $this->form_validation->set_value('nickname'),
 							'province_id' => $this->form_validation->set_value('province_id'),
 							'city_id' => $this->form_validation->set_value('city_id'),
@@ -265,7 +265,7 @@
 							// 自动生成的
 							'constellation' => $this->humanize->constellation( $this->form_validation->set_value('birth') ),
 							'age' => $this->humanize->age( $this->form_validation->set_value('birth') ),
-						)),
+						//)),
 					) );
 					
 					//添加user_units, 用于autocomplete
@@ -366,7 +366,7 @@
 				$this->load->library('t_sina');
 				
 				// 微博提醒文字
-				$reply_text = sprintf( $this->config->item('comment_when_feel') , $current_user['profile']['nickname'], site_url('user/' . $current_user['id']) );
+				$reply_text = sprintf( $this->config->item('comment_when_feel') , $current_user['profile']['nickname'], site_url('user/' . $current_user['id']),  date('Y-m-d H:i:s') ); // 添加日期时间在结尾~
 				$this->t_sina->reply_last_wb( $target_user['t_sina_id'], $reply_text );
 				
 				

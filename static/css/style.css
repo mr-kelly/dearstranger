@@ -23,7 +23,9 @@ a:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
-
+a img {
+	border: none;
+}
 h3 {
 	font-size: 16px;
 	font-weight: bold;
@@ -78,9 +80,11 @@ input {
 
 
 .website_intro {
+/*
 	background: #E3F1FA;
 	border: #AED0EA 1px solid;
 	padding: 5px 10px;
+*/
 }
 
 
@@ -224,6 +228,7 @@ form p {
 		clear:both;
 		padding:0 5px;
 		width:100%;
+		margin: 0 0 15px 0;
 	}
 
 
@@ -263,11 +268,14 @@ form p {
 					.user_label {
 						display: inline-block;
 						width:60px;
+						margin-right: 20px;
 						font-weight: bold;
 						text-align: right;
+						vertical-align: top;
 					}
 					.user_info {
 						display:inline-block;
+						width: 350px;
 						margin: 0 0 0 5px;
 					}
 					.user_secret {
@@ -293,7 +301,7 @@ form p {
 	margin: 0 5px 0 0;
 }
 	.sidebar_widget {
-		margin: 10px 0;
+		margin: 20px 0;
 	}
 	.sidebar_widget h2 {
 		height:27px;

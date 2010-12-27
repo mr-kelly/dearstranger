@@ -3,13 +3,17 @@
 ?>
 
 <div id="content">
-	<h2>有feel指数排行榜</h2>
+	<h2>心动指数排行榜</h2>
+	
+	<p>
+		大家都喜欢什么?　看看吧.
+	</p>
 	
 	<table class="center" width="100%">
 			<tr>
 				<th width="80"></th>
 				<th>名称</th>
-				<th>有feel指数</th>
+				<th>心动指数</th>
 			</tr>
 			<?php foreach( $feel_index_ranking_users as $user ): ?>
 			<tr>
@@ -32,6 +36,15 @@
 	
 </div>
 
+
+<div id="sidebar">
+	<?php
+		$this->load->view('sidebar/user_widget');
+	?>
+	<?php
+		$this->load->view('sidebar/feedback_widget');
+	?>	
+</div>
 
 <?php
 	$this->load->view('footer');

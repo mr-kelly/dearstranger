@@ -51,7 +51,7 @@
 					$this->user_model->create_or_update_user_profile( $user_id, array(
 						'image_url' => $image_url,
 						'feel_index' => 0,
-						'content' => json_encode( array(
+						//'content' => json_encode( array(
 							'nickname' => $me['screen_name'],
 							'province_id' => $me['province'],
 							'city_id' => $me['city'],
@@ -82,7 +82,7 @@
 							'motto' => '',
 							'standard' => '',
 							
-						)),
+						//)),
 						
 						'school_unit' => '', // 学校,单位要独立开
 						

@@ -15,14 +15,14 @@
 						?>
 						<div class="user_show">
 							<div class="user_avatar">
-								<a href="<?=site_url('user/'. $user['id']);?>" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>">
+								<a target="_blank" href="<?=site_url('user/'. $user['id']);?>" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>">
 									<img width="100" src="<?=$user['profile']['image_url'];?>" />
 								</a>
 							</div>
-							<div class="user_info">
+							<div class="user_intro">
 								
 
-								<a class="tooltip" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>" href="<?=site_url('user/'. $user['id']);?>">
+								<a target="_blank" class="tooltip" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>" href="<?=site_url('user/'. $user['id']);?>">
 
 									<span><?=$province['province_name'];?></span>
 									<span><?=$city['city_name'];?></span>
@@ -35,7 +35,7 @@
 								</a>
 								
 								<?php // 如果设置了手机，显示手机标志 
-									if ( isset( $user['profile']['phone'] ) ) :
+									if ( isset( $user['profile']['phone'] ) && $user['profile']['phone'] != '' ) :
 								?>
 								<img width="12" class="tooltip" title="手机绑定用户" src="<?=static_url('images/phoneicon.jpg');?>" />
 								<?php

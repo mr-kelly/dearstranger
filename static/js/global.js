@@ -22,6 +22,11 @@ $(function(){
 	// Tipsy Form表单提示～
 	$('.tooltip_form [title]').tipsy( { trigger: 'focus', gravity: $.fn.tipsy.autoWE , fade: true } );
 	
+
+	// 设置省份时，城市会读取省份所有城市	
+	$('#form_province_id').change(function(){
+		$('#form_city_id').load( $ajax_get_cities + '/' + $(this).val() );
+	});
 });
 
 

@@ -8,9 +8,19 @@ $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 
 
 // 当评论了对方时，通知对方的评论~
-$config['comment_when_feel'] = 'Hi. 「%s」 对你心动了！你可以点击链接 %s 看看他的资料、照片哦。-- 幸福从心动开始！';
+$config['comment_when_feel'] = 'Hi. "%s"对你心动了！你可以点击链接 http://xindong.mrkelly.cc/%s 看看他的资料、照片哦。-- 幸福从心动开始！%s';
+$config['comment_when_mutual'] = '你和%s互相之间心动了！ 心动不如行动，进入网址%s查看他的详细资料吧！%s';
+
+
+$config['invite_message'] = '我加入了「心动」恋爱网络, 在这里交朋友,寻找心动对象, 网址http://xindong.mrkelly.cc';
+
 
 $config['avatar_path'] = './static/upload/';
+
+/**
+ *	分页里，每页显示的数量
+ */
+$config['per_page'] = 20;
 
 
 
@@ -355,29 +365,31 @@ $config['profile_genders'] =  array(
 								);
 								
 $config['profile_loves'] = array(
-								'单身 不想交朋友',
-								'单身',
 								'单身 想恋爱',
-								'未婚非单身',
-								'未婚',
+								'单身',
+								'单身 不想交朋友',
 								'恋爱中',
 								'恋爱中 想交朋友',
+								'未婚非单身',
+								'未婚',
 								'已婚',
+								'丧偶',
 							);
 							
 $config['profile_heights'] = array(
-								'196-200cm',
-								'191-195cm',
-								'186-190cm',
-								'181-185cm',
-								'176-180cm',
-								'171-175cm',
-								'166-170cm',
-								'161-165cm',
+								'150cm以下',
+								'150-155cm',
 								'156-160cm',
 								'151-155cm',
-								'146-150cm',
-								'141-145cm',	
+								'161-165cm',
+								'166-170cm',
+								'171-175cm',
+								'176-180cm',
+								'181-185cm',
+								'186-190cm',
+								'191-195cm',
+								'196-200cm',
+								'200cm以上',
 							);
 							
 							

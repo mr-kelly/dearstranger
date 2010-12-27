@@ -1,5 +1,5 @@
 <div class="sidebar_widget">
-	<h2>大众有feel</h2>
+	<h2>心动大众</h2>
 	
 	<div class="sidebar_widget_content">
 		<ul class="sidebar_users_list">

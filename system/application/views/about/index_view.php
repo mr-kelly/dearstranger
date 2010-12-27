@@ -12,7 +12,7 @@
 		
 		
 				<div class="center">
-					<img src="<?=site_url('static/images/home_intro.png');?>" style="FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?=site_url('static/images/home_intro.png');?>);" />
+					<img src="<?=static_url('images/home_intro.png');?>" style="FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?=site_url('static/images/home_intro.png');?>);" />
 				</div>
 		<p>
 			在「亲爱陌生人」你可以:
@@ -42,6 +42,9 @@
 	</div>
 	
 	<div id="sidebar">
+		<?php
+			$this->load->view('sidebar/about_widget');
+		?>		
 		<?php
 			$this->load->view('sidebar/feedback_widget');
 		?>

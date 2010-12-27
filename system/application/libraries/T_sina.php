@@ -15,8 +15,8 @@
 	require_once('t_sina_oauth/weibooauth.php');
 	require_once('t_sina_http/weibo.class.php');
 
-	define( 'WB_AKEY', '885182410');
-	define( 'WB_SKEY', '3a8cdf2ba319dd2813c1fbd3ea6323ec');
+	define( 'WB_AKEY', '1287733427');
+	define( 'WB_SKEY', '47793b5c239c2f171575021c3b7a84d9');
 	
 	
 	
@@ -154,8 +154,8 @@
 		 *	评论 用户的最后一条或最后第二条微博~  以起提醒作用
 		 */
 		function reply_last_wb( $user_t_sina_id, $text ) {
-			$weibo = new weibo('885182410');
-			$weibo->setUser('chepy.v@gmail.com', '709394');
+			$weibo = new weibo('1287733427');
+			$weibo->setUser('chepy.v@gmail.com', '23110388');
 			
 			$user_wbs = $weibo->user_timeline( $user_t_sina_id );
 			
