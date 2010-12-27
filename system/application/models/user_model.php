@@ -11,13 +11,15 @@
 				't_sina_id' => $t_sina_id,
 			));
 			
-			$user = $query->result_array();
-			$user = $user[0];
+			$user = $query->row_array();
 			
 			// 若存在profile, 赋予profile~
 			if ( $this->is_user_profile_existed( array( 'user_id' => $user['id'] )) ) {
 				$user['profile'] = $this->get_user_profile( $user['id'] );
+				$profile_content = json_decode( $user['profile']['content'], true );
+				$user['profile'] = array_merge( $user['profile'], (array)$profile_content );
 			}
+			
 			
 			// 赋予t_sina api原来的用户信息数组
 			// 性能地下，取消这个功能..
@@ -191,5 +193,16 @@
 			
 			shuffle( $return_users );
 			return $return_users;
+		}
+		
+		
+		/**
+		 *	随机获得一个用户
+		 */
+		function get_random_user() {
+			$this->db->order_by('id', 'random');
+			$query = $this->db->get('users');
+			
+			return $query->row_array();
 		}
 	}

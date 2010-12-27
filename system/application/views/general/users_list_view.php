@@ -7,19 +7,21 @@
 					<?php
 						foreach( $users_list as $user ):
 					?>
+					
+						<?php
+							// 获取当前用户对应的省份、城市
+							$city = get_city_by_id( $user['profile']['city_id'], $user['profile']['province_id'] );
+							$province = get_province_by_id ( $user['profile']['province_id'] );
+						?>
 						<div class="user_show">
 							<div class="user_avatar">
-								<!--<a href="<?=site_url('user/'. $user['id']);?>">-->
+								<a href="<?=site_url('user/'. $user['id']);?>" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>">
 									<img width="100" src="<?=$user['profile']['image_url'];?>" />
-								<!--</a>-->
+								</a>
 							</div>
 							<div class="user_info">
 								
-								<?php
-									// 获取当前用户对应的省份、城市
-									$city = get_city_by_id( $user['profile']['city_id'], $user['profile']['province_id'] );
-									$province = get_province_by_id ( $user['profile']['province_id'] );
-								?>
+
 								<a class="tooltip" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>" href="<?=site_url('user/'. $user['id']);?>">
 
 									<span><?=$province['province_name'];?></span>
@@ -35,7 +37,7 @@
 								<?php // 如果设置了手机，显示手机标志 
 									if ( isset( $user['profile']['phone'] ) ) :
 								?>
-								<img width="12" class="tooltip" title="手机绑定用户" src="<?=site_url('static/images/phoneicon.jpg');?>" />
+								<img width="12" class="tooltip" title="手机绑定用户" src="<?=static_url('images/phoneicon.jpg');?>" />
 								<?php
 									endif;
 								?>

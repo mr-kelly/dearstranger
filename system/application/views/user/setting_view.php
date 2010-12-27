@@ -99,6 +99,19 @@
 							?>
 						</select>
 					</p>
+					
+					<script>
+						$(function(){
+							$('#school_unit').autocomplete( "<?=site_url('user/ajax_get_units');?>", {
+									
+							});
+						});
+					</script>
+					<p>
+						<label>所在学校/单位</label>
+						<input id="school_unit" type="text" name="school_unit" value="<?= isset( $current_user['profile']['school_unit'] ) ? $current_user['profile']['school_unit'] : $ci->input->post('school_unit');?>" />
+					</p>
+
 				</fieldset>
 				
 				
@@ -122,135 +135,202 @@
 					</p>
 				</fieldset>
 				
+				<fieldset>
+					<legend>个人状态</legend>
+					
+					<p>
+						<label>恋爱状态</label>
+						<select name="love">
+							<?php
+								$loves = $ci->config->item('profile_loves');
+								foreach ( $loves as $love ):
+							?>
+							
+							<option <?= ( $current_user['profile']['love'] == $love ) ? 'selected="selected"' : ''; ?>><?=$love;?></option>
+							
+							<?php
+								endforeach;
+							?>
+						</select>
+					</p>
+
+					<p>
+						<label>交友目的</label>
+						<select name="target">
+							<?php
+								$targets = $ci->config->item('profile_targets');
+								
+								foreach ( $targets as $target ):
+							?>
+								<option <?=( $current_user['profile']['target'] == $target ) ? 'selected="selected"' : ''; ?>><?=$target;?></option>
+							<?php
+								endforeach;
+							?>
+							
+						</select>
+					</p>
+					
+					<p>
+						<label class="top">择偶标准</label>
+						<textarea name="standard"><?=$current_user['profile']['standard'];?></textarea>
+					</p>
+					
+					<p>
+						<label>个人主页</label>
+						<input type="text" name="website" value="<?= isset( $current_user['profile']['website'] ) ? $current_user['profile']['website'] : $ci->input->get('website');?>"  />
+					</p>
+					
+					<p>
+						<label>行业</label>
+						<select name="job">
+							<?php
+								$jobs = $ci->config->item('profile_jobs');
+								
+								foreach ( $jobs as $job ):
+							?>
+								<option <?=( $current_user['profile']['job'] == $target ) ? 'selected="selected"' : ''; ?>><?=$job;?></option>
+							<?php
+								endforeach;
+							?>
+							
+						</select>
+					</p>
+					<p>
+						<label>月薪</label>
+						<select name="salary">
+							<?php
+								$salarys = $ci->config->item('profile_salary');
+								
+								foreach ( $salarys as $salary ):
+							?>
+								<option <?=( $current_user['profile']['salary'] == $target ) ? 'selected="selected"' : ''; ?>><?=$salary;?></option>
+							<?php
+								endforeach;
+							?>
+						</select>
+					</p>
+					
+				</fieldset>
 				
-				<p>
-					<label>恋爱状态</label>
-					<select name="love">
-						<?php
-							$loves = $ci->config->item('profile_loves');
-							foreach ( $loves as $love ):
-						?>
-						
-						<option <?= ( $current_user['profile']['love'] == $love ) ? 'selected="selected"' : ''; ?>><?=$love;?></option>
-						
-						<?php
-							endforeach;
-						?>
-					</select>
-				</p>
+				
+				
+				
+				<fieldset>
+					<legend>外形</legend>
+
+					
+
+					<p>
+						<label>身高</label>
+						<select title="你的身高所处的范围" name="height">
+							<?php
+								$heights = $ci->config->item('profile_heights');
+								
+								foreach ( $heights as $height ):
+							?>
+								<?php // 设定可选项， 读取用户设定项， 并显示 ?>
+								<option <?= ( $current_user['profile']['height'] == $height ) ? 'selected="selected"' : ''; ?>><?=$height;?></option>
+							<?php
+								endforeach;
+							?>
+						</select>
+					</p>
+					<p>
+						<label>相貌</label>
+						<select name="face">
+							<?php
+								$faces = $ci->config->item('profile_faces');
+								
+								foreach ( $faces as $face ):
+							?>
+								<option  <?= ( $current_user['profile']['face'] == $face ) ? 'selected="selected"' : ''; ?>><?=$face;?></option>
+							<?php
+								endforeach;
+							?>
+							
+						</select>
+					</p>
+					
+					<p>
+						<label>身型</label>
+						<select name="figure">
+							<?php
+								$figures = $ci->config->item('profile_figure');
+								
+								foreach ( $figures as $figure ):
+							?>
+								<option <?=( $current_user['profile']['figure'] == $figure ) ? 'selected="selected"' : ''; ?>><?=$figure;?></option>
+							<?php
+								endforeach;
+							?>
+						</select>
+					</p>
+					
+				</fieldset>
+				
+				<fieldset>
+					<legend>内在</legend>
+					<p>
+						<label>特长爱好:</label>
+						<input type="text" name="hobby" value="<?= isset( $current_user['profile']['hobby'] ) ? $current_user['profile']['hobby'] : $ci->input->get('hobby');?>"  />
+					</p>
+					
+					<p>
+						<label>学历</label>
+						<select name="education">
+							<?php
+								$educations = $ci->config->item('profile_education');
+								
+								foreach ( $educations as $education ):
+							?>
+								<option <?=( $current_user['profile']['education'] == $target ) ? 'selected="selected"' : ''; ?>><?=$education;?></option>
+							<?php
+								endforeach;
+							?>
+							
+						</select>
+					</p>
+
+					
+
+					<p>
+						<label>喜爱书籍</label>
+						<input type="text" name="like_books" value="<?= isset( $current_user['profile']['like_books'] ) ? $current_user['profile']['like_books'] : $ci->input->post('like_books');?>"  />
+					</p>
+					<p>
+						<label>喜爱音乐</label>
+						<input type="text" name="like_music" value="<?= isset( $current_user['profile']['like_music'] ) ? $current_user['profile']['like_music'] : $ci->input->post('like_music');?>" />
+					</p>
+					<p>
+						<label>喜爱运动</label>
+						<input type="text" name="like_sports" value="<?= isset( $current_user['profile']['like_sports'] ) ? $current_user['profile']['like_sports'] : $ci->input->post('like_sports');?>" />
+					</p>
+					<p>
+						<label>喜爱电影</label>
+						<input type="text" name="like_movies" value="<?= isset( $current_user['profile']['like_movies'] ) ? $current_user['profile']['like_movies'] : $ci->input->post('like_movies');?>" />
+					</p>
+					<p>
+						<label>喜爱人物</label>
+						<input type="text" name="like_personages" value="<?= isset( $current_user['profile']['like_personages'] ) ? $current_user['profile']['like_personages'] : $ci->input->post('like_personages');?>" />
+					</p>
+					<p>
+						<label>座右铭</label>
+						<input type="text" name="motto" value="<?= isset( $current_user['profile']['motto'] ) ? $current_user['profile']['motto'] : $ci->input->post('motto');?>" />
+					</p>
+					
+					<p>
+						<label class="top">自我介绍</label>
+						<textarea name="description"><?=$current_user['profile']['description'];?></textarea>
+					</p>
+					
+				</fieldset>
+				
+				
 
 				
-				
-				<p>
-					<label>身高</label>
-					<select title="你的身高所处的范围" name="height">
-						<?php
-							$heights = $ci->config->item('profile_heights');
-							
-							foreach ( $heights as $height ):
-						?>
-							<?php // 设定可选项， 读取用户设定项， 并显示 ?>
-							<option <?= ( $current_user['profile']['height'] == $height ) ? 'selected="selected"' : ''; ?>><?=$height;?></option>
-						<?php
-							endforeach;
-						?>
-					</select>
-				</p>
-				<p>
-					<label>相貌</label>
-					<select name="face">
-						<?php
-							$faces = $ci->config->item('profile_faces');
-							
-							foreach ( $faces as $face ):
-						?>
-							<option  <?= ( $current_user['profile']['face'] == $face ) ? 'selected="selected"' : ''; ?>><?=$face;?></option>
-						<?php
-							endforeach;
-						?>
-						
-					</select>
-				</p>
-				
-				<p>
-					<label>个人主页</label>
-					<input type="text" name="website" value="<?= isset( $current_user['profile']['website'] ) ? $current_user['profile']['website'] : $ci->input->get('website');?>"  />
-				</p>
-				
-				
-				<p>
-					<label>交友目的</label>
-					<select name="target">
-						<?php
-							$targets = $ci->config->item('profile_targets');
-							
-							foreach ( $targets as $target ):
-						?>
-							<option <?=( $current_user['profile']['target'] == $target ) ? 'selected="selected"' : ''; ?>><?=$target;?></option>
-						<?php
-							endforeach;
-						?>
-						
-					</select>
-				</p>
-				<p>
-					<label>特长爱好:</label>
-					<input type="text" name="hobby" />
-				</p>
-				<p>
-					<label class="top">自我介绍</label>
-					<textarea name="description"><?=$current_user['profile']['description'];?></textarea>
-				</p>
-				
-				
-				
-				<!-- 未设置后台-->
-				<p>
-					<label>学历</label>
-					<input type="text" name="education" />
-				</p>
-				<p>
-					<label>职业</label>
-					<input type="text" name="job" />
-				</p>
-				<p>
-					<label>月薪</label>
-					<input type="text" name="salary" />
-				</p>
-				<p>
-					<label>身型</label>
-					<input type="text" name="figure" />
-				</p>
+
 				
 
-				<p>
-					<label>喜爱书籍</label>
-					<input type="text" name="like_books" />
-				</p>
-				<p>
-					<label>喜爱音乐</label>
-					<input type="text" name="like_music" />
-				</p>
-				<p>
-					<label>喜爱运动</label>
-					<input type="text" name="like_sports" />
-				</p>
-				<p>
-					<label>喜爱电影</label>
-					<input type="text" name="like_movies" />
-				</p>
-				<p>
-					<label>喜爱人物</label>
-					<input type="text" name="like_personages" />
-				</p>
-				<p>
-					<label>座右铭</label>
-					<input type="text" name="motto" />
-				</p>
-				<p>
-					<label>所在学校/单位</label>
-					<input type="text" name="school_unit" />
-				</p>
 				
 				
 				

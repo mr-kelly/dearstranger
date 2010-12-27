@@ -8,13 +8,13 @@
 	<meta name="author" content="Mrkelly 陈霈霖,http://mrkelly.cc,chepy.v@gmail.com" />
 	<meta name="robots" content="all" />
     <meta name="description" content="" /> 
-    <meta name="keywords" content="教科书,二手书,同学,大学生" /> 
+    <meta name="keywords" content="恋爱,交友,单身,心动" /> 
 	
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />  
 	
 	<script type="text/javascript">
-		var $home_page = "<?=static_url('/');?>";
+		var $home_page = "<?=site_url('/');?>";
 	</script>
 	<script type="text/javascript" src="<?=static_url('js/lib.js');?>"></script>
 	
@@ -31,6 +31,24 @@
 	<!--input tips-->
 	<script type="text/javascript" src="<?=static_url('js/jquery.input_tips.js');?>"></script>
 	
+
+	<!--bgiFrame-->
+	<script type='text/javascript' src="<?=static_url('js/jquery.bgiframe.min.js');?>"></script> 
+	
+	<!--ajaxQueue-->
+	<script type='text/javascript' src="<?=static_url('js/jquery.ajaxQueue.js');?>"></script> 
+	
+	<!--thickbox-compressed.js-->
+	<script type='text/javascript' src="<?=static_url('js/thickbox-compressed.js');?>"></script> 
+	<link href="<?=static_url('js/thickbox.css');?>" type="text/css" rel="stylesheet" />
+	
+	
+	<!--jQuery AutoComplete-->
+	<script type="text/javascript" src="<?=static_url('js/jquery.autocomplete/jquery.autocomplete.min.js');?>"></script>
+	<link href="<?=static_url('js/jquery.autocomplete/jquery.autocomplete.css');?>" type="text/css" rel="stylesheet" />
+	
+	
+	
 	<script type="text/javascript" src="<?=static_url('js/global.js');?>"></script>
 	
 	<link href="<?=static_url('css/style.css');?>" type="text/css" rel="stylesheet" />
@@ -40,8 +58,7 @@
 		<script type="text/javascript" src="<?=static_url('js/jquery.imgareaselect/scripts/jquery.imgareaselect.min.js');?>"></script>
 		
 
-
-	<title><?= ( isset( $page_title ) ) ? $page_title : '亲爱陌生人 - 微博交友、恋爱，寻找你心仪的恋爱对象'; ?></title>
+	<title><?= ( isset( $page_title ) ) ? $page_title : '心动 :: 微博交友、恋爱，寻找你心仪的恋爱对象、寻找心动的他/她'; ?></title>
 </head>
 <body>
 
@@ -51,17 +68,17 @@
 	
 	
 	<ul id="menu">
-		<li><a title="回到Single Club的首页" class="tooltip" href="<?=site_url('/');?>">首页</a></li>
-		<li><a title="查看有feel指数排行榜" class="tooltip" href="<?=site_url('ranking');?>">排行</a></li>
+		<li><a title="回到「心动」的首页" class="tooltip" href="<?=site_url('/');?>">首页</a></li>
+		<li><a title="查看心动指数排行榜" class="tooltip" href="<?=site_url('ranking');?>">排行</a></li>
 		<li><a title="筛选城市、资料、身高、样貌，寻觅意中的她" class="tooltip" href="<?=site_url('search');?>">寻觅</a></li>
 	</ul>
-	<h2>蛋壳</h2>
+	<h2><a href="<?=site_url('/');?>">心动网 - 微博单身交友，恋爱2.0，</a></h2>
 	
 	
 </div>
 
 <div id="wrapper">
-	<?php if ( isset( $feedback ) ): ?>
+	<?php if ( isset( $feedback ) && $feedback != '' ): ?>
 	<div id="feedback">
 		<span class="kk_icon kk_icon_info"></span>
 		<?php

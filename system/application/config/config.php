@@ -8,61 +8,13 @@ $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 
 
 // 当评论了对方时，通知对方的评论~
-$config['comment_when_feel'] = 'Hi. 「%s」 在Single Club上选择了对你“有feel”，你可以点击链接 %s 看看他的资料、照片哦。';
+$config['comment_when_feel'] = 'Hi. 「%s」 对你心动了！你可以点击链接 %s 看看他的资料、照片哦。-- 幸福从心动开始！';
 
 $config['avatar_path'] = './static/upload/';
 
 
 
-$config['profile_genders'] =  array(
-									'男',
-									'女',
-								);
-								
-$config['profile_loves'] = array(
-								'单身 不想交朋友',
-								'单身',
-								'未婚', // 代表非单身未婚
-								'恋爱中',
-								'恋爱中 想交朋友',
-								'已婚',
-							);
-							
-$config['profile_heights'] = array(
-								'196-200cm',
-								'191-195cm',
-								'186-190cm',
-								'181-185cm',
-								'176-180cm',
-								'171-175cm',
-								'166-170cm',
-								'161-165cm',
-								'156-160cm',
-								'151-155cm',
-								'146-150cm',
-								'141-145cm',	
-							);
-							
-							
-$config['profile_faces'] =  array(
-								'倾国倾城',
-								'还不错',
-								'大众脸',
-								'马马虎虎',
-								'丑.....',
-							);
-							
-$config['profile_targets'] = array(
-								'普通朋友',
-								'谈恋爱',
-								'结婚',
-								'交友',
-								'其它',
-							);
-							
-$config['profile_constellation'] = array(
-										
-									);
+
 
 
 
@@ -395,3 +347,124 @@ $config['proxy_ips'] = '';
 
 /* End of file config.php */
 /* Location: ./system/application/config/config.php */
+
+
+$config['profile_genders'] =  array(
+									'男',
+									'女',
+								);
+								
+$config['profile_loves'] = array(
+								'单身 不想交朋友',
+								'单身',
+								'单身 想恋爱',
+								'未婚非单身',
+								'未婚',
+								'恋爱中',
+								'恋爱中 想交朋友',
+								'已婚',
+							);
+							
+$config['profile_heights'] = array(
+								'196-200cm',
+								'191-195cm',
+								'186-190cm',
+								'181-185cm',
+								'176-180cm',
+								'171-175cm',
+								'166-170cm',
+								'161-165cm',
+								'156-160cm',
+								'151-155cm',
+								'146-150cm',
+								'141-145cm',	
+							);
+							
+							
+$config['profile_faces'] =  array(
+								'倾国倾城',
+								'还不错',
+								'大众脸',
+								'马马虎虎',
+								'挺丑的',
+							);
+							
+$config['profile_targets'] = array(
+								'普通朋友',
+								'谈恋爱',
+								'结婚',
+								'交友',
+								'其它',
+							);
+							
+$config['profile_constellation'] = array(
+										'白羊座',
+										'金牛座',
+										'双子座',
+										'巨蟹座',
+										'狮子座',
+										'处女座',
+										'天秤座',
+										'天蝎座',
+										'射手座',
+										'摩羯座',
+										'水瓶座',
+										'双鱼座',
+									);
+
+
+$config['profile_education'] = array(
+								'中学',
+								'中专',
+								'技校',
+								'大专',
+								'本科',
+								'硕士',
+								'博士',
+);
+
+$config['profile_jobs'] = array(
+							'学生',
+							'计算机/互联网/通讯',
+							'销售',
+							'市场/公关/广告',
+							'财务/审计/统计/金融',
+							'生产/营运/工程',
+							'行政/人事/后勤',
+							'高级管理',
+							'物流/贸易/采购',
+							'文字/艺术/设计',
+							'科研人员',
+							'律师/法务',
+							'教师',
+							'医疗/护理',
+							'咨询/顾问',
+							'公务员',
+							'培训生',
+							'建筑/房地产',
+							'翻译',
+							'其他',
+);
+
+$config['profile_salary'] = array(
+								'还没有',
+								'2000以下',
+								'2000-4000',
+								'4000-7000',
+								'7000-10000',
+								'10000以上',
+);
+
+$config['profile_figure'] = array(
+							'苗条',
+							'匀称',
+							'健壮',
+							'小巧',
+							'丰满',
+							'高挑',
+							'较胖',
+							'较瘦',
+							'运动型',
+							'残缺美',
+							'完美',
+);

@@ -1,3 +1,14 @@
+/**
+ *	Ajax Loading
+ */
+$(function(){
+	$('#loading').ajaxStart( function(){
+		$(this).show();
+	}).ajaxSuccess( function() {
+		$(this).hide();
+	});
+	
+});
 
 
 
@@ -13,17 +24,6 @@ $(function(){
 	
 });
 
-/**
- *	Ajax Loading
- */
-$(function(){
-	$('#loading').ajaxStart( function(){
-		$(this).show();
-	}).ajaxSuccess( function() {
-		$(this).hide();
-	});
-	
-});
 
 
 

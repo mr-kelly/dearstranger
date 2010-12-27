@@ -6,7 +6,7 @@
 				
 				<div class="sidebar_widget_content">
 					<p>
-						「亲爱陌生人」是一个属于所有人的网络，在目前初期固然存在不足，欢迎提出你的宝贵意见。
+						「心动」是一个属于所有人的网络，在目前初期存在不足，欢迎提出你的宝贵意见。
 					</p>
 					<form class="tooltip_form" method="post" action="<?=site_url('feedback');?>">
 						<?php

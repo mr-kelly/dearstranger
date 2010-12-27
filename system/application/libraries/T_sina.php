@@ -1,4 +1,17 @@
 <?php
+
+/**
+ *	CodeIgniter T_sina 新浪微博库 by Mrkelly
+ 	
+ 	version: 0.2
+ 	
+ 	将新浪微博的Oauth验证和http验证绑定在这一个库上.
+ 	PHP服务器需要curl支持
+ 	
+ 	** 记得修改WB_AKEY & WB_SKEY
+ 
+ */
+
 	require_once('t_sina_oauth/weibooauth.php');
 	require_once('t_sina_http/weibo.class.php');
 
@@ -65,7 +78,20 @@
 		
 		
 		/**
-		 *	获取授权地址,    需提供callback 返回网址
+		 *	获取授权地址,该地址转到新浪的网页，让用户进行授权
+		 
+		 			需提供$callback 返回网址
+		 
+		 	(常用)Example:
+		 	
+		 	action authorize_link():
+		 		$authorize_url = $this->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth') );
+		 		redirect( $authorize_url );
+		 		
+		 		
+		 	一般建议把这个授权地址放到一个controller action里，因为新浪提供的oauth_token是有限时的，
+		 	若用户进入页面后一定时间按，token会失效，这时再按，就会出错！
+			这非常重要
 		 */
 		function getAuthorizeURL( $callback_url ) {
 			

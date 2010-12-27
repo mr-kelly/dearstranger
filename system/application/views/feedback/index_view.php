@@ -4,7 +4,7 @@
 
 <div id="content" class="center">
 	
-	<img src="<?=site_url('static/images/thankyou.gif');?>" style="margin-top:50px;" />
+	<img src="<?=static_url('images/thankyou.gif');?>" style="margin-top:50px;" />
 	<br />
 	<br />
 	<br />

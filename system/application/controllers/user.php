@@ -2,6 +2,18 @@
 
 	class User extends KK_Controller {
 		
+		/**
+		 *	缘分天注定！随机到一个用户那里！
+		 */
+		function random() {
+			login_redirect();
+			
+			
+			$this->load->model('user_model');
+			$user = $this->user_model->get_random_user();
+			redirect( '/user/'. $user['id'] );
+		}
+		
 		function user_lookup( $user_id ) {
 			$this->load->model('user_model');
 			$user = $this->user_model->get_user_by_id( $user_id );
@@ -146,8 +158,10 @@
 			$user = get_user();
 			
 			$this->load->model('user_model');
+			$this->load->library('t_sina');
+			$t_sina_profile = $this->t_sina->getSelf();
 			$this->user_model->create_or_update_user_profile( $user['id'], array(
-				'image_url' => str_replace( '/50/', '/180/', $user['t_sina_profile']['profile_image_url']) ,
+				'image_url' => str_replace( '/50/', '/180/', $t_sina_profile['profile_image_url']) ,
 			));
 			
 			
@@ -161,7 +175,7 @@
 		function setting() {
 			login_redirect();
 			
-			$feedback = null;
+			$feedback = $this->input->get('feedback');
 			
 			$current_user = get_user();
 			// 提交的数据,进行profile setting处理
@@ -196,6 +210,7 @@
 				$this->form_validation->set_rules('like_personages', '喜爱人物', 'xss_clean|trim');
 				$this->form_validation->set_rules('motto', '座右铭', 'xss_clean|trim');
 				$this->form_validation->set_rules('school_unit', '学校/单位', 'xss_clean|trim');
+				$this->form_validation->set_rules('standard', '择偶标准', 'xss_clean|trim');
 				
 				
 				
@@ -212,7 +227,8 @@
 					$this->user_model->create_or_update_user_profile( $current_user['id'],  array(
 
 						
-
+						// 学校单位可auto complete~以后
+						'school_unit' => $this->form_validation->set_value('school_unit'),
 						
 						// Profile Conetent ， 所有profile字段为json储存在数据库!
 						'content' => json_encode( array(
@@ -242,7 +258,8 @@
 							'like_movies' => $this->form_validation->set_value('like_movies'),
 							'like_personages' => $this->form_validation->set_value('like_personages'),
 							'motto' => $this->form_validation->set_value('motto'),
-							'school_unit' => $this->form_validation->set_value('school_unit'),
+							'standard' => $this->form_validation->set_value('standard'),
+							
 							
 							
 							// 自动生成的
@@ -251,6 +268,11 @@
 						)),
 					) );
 					
+					//添加user_units, 用于autocomplete
+					$this->load->model('unit_model');
+					$this->unit_model->add(array(
+						'name' => $this->form_validation->set_value('school_unit'),
+					));
 					$feedback .= '<p>用户资料已成功修改!</p>';
 
 					
@@ -271,6 +293,7 @@
 		function ajax_random_users() {
 			$this->load->model('user_model');
 			$random_users = $this->user_model->get_random_users();
+			
 			
 			kk_show_view('general/users_list_view', array( 'users_list'=>$random_users,)) ;
 		}
@@ -380,5 +403,32 @@
 			
 			
 			echo $return;
+		}
+		
+		
+		
+		
+		/**
+		 *	返回一个文本+回车 集， 用于jquery autocomplete
+		 */
+		function ajax_get_units() {
+			$this->load->model('unit_model');
+			$units = $this->unit_model->get();
+			
+			$q = strtolower($_GET["q"]);
+			if (!$q) return;
+			
+			
+			$result = array();
+			
+			foreach( $units as $key=>$unit ) {
+				//array_push( $result, $unit['name'] );
+				$unit_name = $unit['name'];
+				if ( strpos( strtolower($unit_name), $q ) !== false ) {
+					echo "$unit_name\n";
+				}
+			}
+			
+			//echo json_encode( $result );
 		}
 	}

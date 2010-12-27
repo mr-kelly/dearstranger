@@ -7,13 +7,16 @@
 	
 	<table class="center" width="100%">
 			<tr>
-				<th colspan="2">名称</th>
+				<th width="80"></th>
+				<th>名称</th>
 				<th>有feel指数</th>
 			</tr>
 			<?php foreach( $feel_index_ranking_users as $user ): ?>
 			<tr>
 				<td>
-					<img src="<?=$user['profile']['image_url'];?>" width="80" />
+					<a href="<?=site_url('user/'.$user['id']);?>">
+						<img src="<?=$user['profile']['image_url'];?>" width="80" />
+					</a>
 				</td>
 				<td>
 					<a href="<?=site_url('user/'.$user['id']);?>">
@@ -26,14 +29,7 @@
 			</tr>
 			<?php endforeach; ?>
 	</table>
-	<?php print_r( $feel_index_ranking_users );?>
-	<div>
-		<ul>
-			<?php foreach( $feel_index_ranking_users as $user ): ?>
-			<li><?=$user['profile']['nickname'];?></li>
-			<?php endforeach; ?>
-		</ul>
-	</div>
+	
 </div>
 
 

@@ -49,18 +49,47 @@
 					// 微博提供的头像图片太小了， 改成180的
 					$image_url = str_replace( '/50/', '/180/', $me['profile_image_url']);
 					$this->user_model->create_or_update_user_profile( $user_id, array(
-						'nickname' => $me['screen_name'],
-						'province_id' => $me['province'],
-						'city_id' => $me['city'],
-						'description' => $me['description'],
-						'gender' => ( $me['gender'] == 'm' ) ? '男' : '女',
 						'image_url' => $image_url,
-						'website' => $me['url'],
+						'feel_index' => 0,
+						'content' => json_encode( array(
+							'nickname' => $me['screen_name'],
+							'province_id' => $me['province'],
+							'city_id' => $me['city'],
+							'description' => $me['description'],
+							'gender' => ( $me['gender'] == 'm' ) ? '男' : '女',
+							
+							'website' => $me['url'],
+							'birth' => '',
+							'love' => '', // 恋爱状态
+							'gender' => '',
+							'height' => '',
+							'face' => '',
+							'phone' => '',
+							'qq' => '',
+							'msn' => '',
+							'target' => '',
+							'hobby' => '',
+
+							'education' => '',
+							'job' => '',
+							'salary' => '',
+							'figure' => '',
+							'like_books' => '',
+							'like_music' => '',
+							'like_sports' => '',
+							'like_movies' => '',
+							'like_personages' => '',
+							'motto' => '',
+							'standard' => '',
+							
+						)),
+						
+						'school_unit' => '', // 学校,单位要独立开
+						
 					) );
 					
-					
-					// 用户授权成功，回到首页
-					redirect('/');
+					// 用户授权成功，首次登录，转到设置页
+					redirect('user/setting?feedback=' . '欢迎来到「心动」，为了寻找心动的他/她，请把你的资料填完整哦。');
 					echo( 'user not existed, creating <br />');
 					
 				} else {

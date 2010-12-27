@@ -11,7 +11,7 @@
 			<br />
 
 			<div>
-				<img style="margin-bottom:-5px;" height="22" src="<?=site_url('static/images/youfeel_index.gif');?>" />
+				<img style="margin-bottom:-5px;" height="22" src="<?=static_url('images/youfeel_index.gif');?>" />
 				<span><?=$user['feel_index'];?></span>
 			</div>
 
@@ -81,6 +81,24 @@
 					<span class="user_info"><?=$user['profile']['love'];?></span>
 				</li>
 				
+				
+				<li>
+					<span class="user_label">微博:</span>
+					<span class="user_info user_secret">
+						<?php
+							if ( is_feel( $user['id']) == 'mutual'  ):
+						?>
+							<a target="_blank" href="http://t.sina.com.cn/<?=$user['t_sina_id'];?>">http://t.sina.comm.cn/<?=$user['t_sina_id'];?></a>
+						<?php
+							else:
+						?>
+							双方有feel才可以查看
+						<?php
+							endif;
+						?>
+					</span>
+				</li>
+				
 				<li>
 					<span class="user_label">手机:</span>
 					<span class="user_info user_secret">
@@ -95,6 +113,8 @@
 						
 					</span>
 				</li>
+				
+
 				
 				<li>
 					<span class="user_label">QQ:</span>
