@@ -3,6 +3,11 @@
 
 
 
+// 强制宣传。 用户第一次连接心动， 是否强行发一条微博宣传~
+$config['force_publicize'] = true;
+
+
+
 
 $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 
@@ -12,8 +17,12 @@ $config['comment_when_feel'] = 'Hi. "%s"对你心动了！你可以点击链接 
 $config['comment_when_mutual'] = '你和%s互相之间心动了！ 心动不如行动，进入网址%s查看他的详细资料吧！%s';
 
 
-$config['invite_message'] = '我加入了「心动」恋爱网络, 在这里交朋友,寻找心动对象, 网址http://xindong.mrkelly.cc';
 
+$config['invite_specify'] = 'Hi.有人邀请你加入「心动」恋爱网络，点击这里看看: %s ，爱情说不定从这里开始呢 ' . date('Y-m-d H:i:s');
+
+$config['invite_weibo'] = '我加入了「心动」恋爱网络, 在这里交朋友,寻找心动对象, 网址 http://xindong.mrkelly.cc ';
+
+$config['invite_success'] = '你要邀请的%s已经加入「心动」！他的资料网址是%s';
 
 $config['avatar_path'] = './static/upload/';
 
@@ -39,6 +48,8 @@ $config['per_page'] = 20;
 |	http://example.com/
 |
 */
+$config['formal_url'] = 'http://xindong.mrkelly.cc';
+
 $config['base_url']	= "/xxmm/";
 
 $config['static_url'] = $config['base_url'] . 'static/';

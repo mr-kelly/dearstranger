@@ -3,7 +3,7 @@ body {
 	line-height: 18px;
 	padding:0;
 	margin:0;
-	background: url(../images/bg.jpg) fixed repeat-x;
+	background: url(../images/bg.jpg) fixed repeat-x #F8F5EC;
 	color: #333;
 	text-align:center;
 	font-family: Arial;
@@ -96,8 +96,8 @@ input {
 	width: 100%;
 	background: url(../images/loading.gif) no-repeat;
 	position: fixed;
-	top:0;
-	left:0;
+	top:10px;
+	left:10px;
 	display: none;
 }
 
@@ -217,7 +217,6 @@ form p {
 #content {
 	float: left;
 	width: 680px;
-	padding: 5px;
 	min-height: 300px;
 	padding: 10px 10px;
 }
@@ -228,7 +227,7 @@ form p {
 		clear:both;
 		padding:0 0 0 10px;
 		width:100%;
-		margin: 0 0 15px 0;
+		margin: 15px 0 15px 0;
 		
 	}
 

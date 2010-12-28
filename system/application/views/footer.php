@@ -13,7 +13,7 @@
 
 <div id="footer">
 	<div id="footer_left">
-		<a class="tooltip" href="http://mrkelly.cc">&copy; Mrkelly 2010 All Rights Reserved</a>
+		<a class="tooltip" href="http://mrkelly.cc">&copy; 心动係Mrkelly整嘅!</a> 2010-2011 All Rights Reserved
 		<br />
 		<span>
 			粤ICP备07053148号
@@ -26,9 +26,7 @@
 		<a class="tooltip" title="「心动」自由、平等、开放，欢迎广大的开发者、创业者加入我们的团队。" href="<?=site_url('about/join_us');?>">
 			加入我们
 		</a> |
-		<a class="tooltip" title="鸣谢一些人一些事" href="<?=site_url('about/thank');?>">
-			特别鸣谢
-		</a> | 
+
 		<a class="tooltip" title="「心动」保障用户的隐私" href="<?=site_url('about/privacy');?>">
 			隐私声明
 		</a> |

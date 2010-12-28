@@ -9,8 +9,10 @@
 		 		检查用户ID是否存在数据库, 不存在, redirect到第一次登录页
 		 								存在,   提示成功!
 		 		
+		 		$invited_by 被谁邀请~ 邀请后通知已经被邀请
 		 */
-		function index() {
+		function index( $invited_by = null ) {
+			
 			$this->load->library('T_sina');
 			$this->load->model('user_model');
 			
@@ -89,6 +91,13 @@
 						
 					) );
 					
+					// 是被邀请的！ 那么告诉邀请人，被邀请人已加入，和被邀人在心动的主页
+					if ( $invited_by ) {
+						$this->load->library('t_sina');
+						$this->t_sina->reply_last_wb( $invited_by , sprintf( $this->config->item('invite_success'), $me['screen_name'], $this->config->item('formal_url').site_url('user/'.$user_id) ) );
+					}
+					
+					
 					// 用户授权成功，首次登录，转到设置页
 					redirect('user/setting?feedback=' . '欢迎来到「心动」，为了寻找心动的他/她，请把你的资料填完整哦。');
 					echo( 'user not existed, creating <br />');
@@ -123,8 +132,12 @@
 		 */
 		function authorize_link() {
 			$this->load->library('t_sina');
-			$authorize_url = $this->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth') );
+			$authorize_url = $this->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth/index') );
 			
+			
+			if ( isset($_GET['invited_by']) ) {
+				$authorize_url .= '/' . $_GET['invited_by'] ;
+			}
 			
 			redirect( $authorize_url );
 		}

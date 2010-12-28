@@ -148,10 +148,32 @@
 			return $weibo->show_user( $uid_or_name );
 		}
 		
+		
+		/**
+		 *	获取当前登录用户的关注...
+		 
+		 	$limit 用于取多少数据...
+		 */
+		function getFriends( $limit = null ) {
+			$weibo = $this->getWeibo();
+			$friends = $weibo->friends();
+			
+			shuffle( $friends );  // 让粉丝随机排列，用于抽取
+			
+			if ( $limit ) {
+				$friends = array_chunk( $friends, $limit );
+				$friends = $friends[0];
+			}
+			
+			return $friends;
+		}
 		/**
 		 *  用官方微博帐号~
 		 
 		 *	评论 用户的最后一条或最后第二条微博~  以起提醒作用
+		 
+		 	$user_t_sina_id, 可以是id, 也可以是screen_name
+		 	
 		 */
 		function reply_last_wb( $user_t_sina_id, $text ) {
 			$weibo = new weibo('1287733427');
