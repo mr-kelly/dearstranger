@@ -39,7 +39,7 @@
 						<a href="<?=site_url('user/ajax_from_feel?ajax=' . rand() );?>">谁对你有feel</a>
 					</li>
 					<li>
-						<a href="<?=site_url('user/ajax_to_feel?ajax=' . rand() );?>">心仪对象</a>
+						<a href="<?=site_url('user/ajax_to_feel?ajax=' . rand() );?>">心动对象</a>
 					</li>
 				<?php endif; ?>
 				

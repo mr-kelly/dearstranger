@@ -31,6 +31,7 @@
 			
 			$data = array(
 				'feedback' => $feedback,
+				'page_title' => '写下建议给「心动」',
 			);
 			$this->load->view('feedback/index_view', $data);
 			

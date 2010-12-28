@@ -175,7 +175,9 @@
 				<li>
 					<span class="user_label">个人主页</span>
 					<span class="user_info">
-						<?=$user['profile']['website'];?>
+						<a href="<?=$user['profile']['website'];?>">
+							<?=$user['profile']['website'];?>
+						</a>
 					</span>
 				</li>
 				<?php endif; ?>

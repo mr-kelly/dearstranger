@@ -6,16 +6,14 @@
 	<div id="content">
 		
 		<h3>这是什么</h3>
-		<p>
-			「亲爱陌生人」是一个特别的恋爱交友网络。他与她，三步之遥：		
-		</p>
 		
 		
-				<div class="center">
-					<img src="<?=static_url('images/home_intro.png');?>" style="FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?=site_url('static/images/home_intro.png');?>);" />
-				</div>
+		<div class="center">
+			<img src="<?=static_url('images/home_intro.jpg');?>" style="FILTER: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=<?=site_url('static/images/home_intro.png');?>);" />
+		</div>
+		
 		<p>
-			在「亲爱陌生人」你可以:
+			在「心动」你可以:
 			<ul>
 				<li>找到你的心仪对象</li>
 				<li>结识你的心仪对象</li>

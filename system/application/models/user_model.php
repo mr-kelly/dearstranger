@@ -179,7 +179,8 @@
 		
 		
 		
-		function get_users_by_city( $province_id, $city_id ) {
+		function get_users_by_city( $province_id, $city_id, $limit=null, $offset=null ) {
+			$this->db->limit( $limit, $offset );
 			$query = $this->db->get_where('user_profiles', array(
 				'province_id' => $province_id,
 				'city_id' => $city_id,
@@ -199,9 +200,10 @@
 		/**
 		 *	随机获得一个用户
 		 */
-		function get_random_user() {
+		function get_random_user( $data ) {
 			$this->db->order_by('id', 'random');
-			$query = $this->db->get('users');
+			$this->db->limit( $this->config->item('per_page') );
+			$query = $this->db->get_where('user_profiles', $data );
 			
 			return $query->row_array();
 		}

@@ -226,9 +226,10 @@ form p {
 		line-height:32px;
 		border-bottom: 1px dotted #CCC;
 		clear:both;
-		padding:0 5px;
+		padding:0 0 0 10px;
 		width:100%;
 		margin: 0 0 15px 0;
+		
 	}
 
 

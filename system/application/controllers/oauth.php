@@ -29,6 +29,7 @@
 					// 未登录~，session可能滞留了。清空它
 					$this->session->unset_userdata('last_key');
 					
+					//print_r( $me );
 					exit('failed! have logined');
 					
 					// 清空登录数据之后，重新获取一次

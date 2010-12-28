@@ -107,7 +107,7 @@
 					</script>
 					<p>
 						<label>所在学校/单位</label>
-						<input id="school_unit" type="text" name="school_unit" value="<?= isset( $current_user['profile']['school_unit'] ) ? $current_user['profile']['school_unit'] : $ci->input->post('school_unit');?>" />
+						<input title="填入你所在学校、单位的全称，如:北京师范大学珠海分校，中国移动珠海分公司" id="school_unit" type="text" name="school_unit" value="<?= isset( $current_user['profile']['school_unit'] ) ? $current_user['profile']['school_unit'] : $ci->input->post('school_unit');?>" />
 					</p>
 
 				</fieldset>

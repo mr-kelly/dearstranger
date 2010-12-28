@@ -8,7 +8,7 @@ $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 
 
 // 当评论了对方时，通知对方的评论~
-$config['comment_when_feel'] = 'Hi. "%s"对你心动了！你可以点击链接 http://xindong.mrkelly.cc/%s 看看他的资料、照片哦。-- 幸福从心动开始！%s';
+$config['comment_when_feel'] = 'Hi. "%s"对你心动了！你可以点击链接 http://xindong.mrkelly.cc%s 看看他的资料、照片哦。-- 幸福从心动开始！%s';
 $config['comment_when_mutual'] = '你和%s互相之间心动了！ 心动不如行动，进入网址%s查看他的详细资料吧！%s';
 
 

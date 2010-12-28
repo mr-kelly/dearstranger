@@ -9,7 +9,7 @@
 			
 			
 			$data = array(
-				//'random_users' => $random_users,
+				'page_title' => '心动 :: 微博交友、恋爱，寻找你心仪的恋爱对象、寻找心动的他/她',
 			);
 			
 			

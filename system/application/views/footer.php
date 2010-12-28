@@ -20,27 +20,28 @@
 		</span>
 	</div>
 	<div id="footer_right">
-		<a class="tooltip" title="关于Single Club的起源、介绍" href="<?=site_url('about/');?>">
-			恋爱宣言
-		</a> | 
-		<a class="tooltip" title="关于Single Club的起源、介绍" href="<?=site_url('about/');?>">
+		<a class="tooltip" title="关于「心动」的起源、介绍" href="<?=site_url('about/');?>">
 			关于我们
 		</a> | 
+		<a class="tooltip" title="「心动」自由、平等、开放，欢迎广大的开发者、创业者加入我们的团队。" href="<?=site_url('about/join_us');?>">
+			加入我们
+		</a> |
 		<a class="tooltip" title="鸣谢一些人一些事" href="<?=site_url('about/thank');?>">
 			特别鸣谢
 		</a> | 
-		<a class="tooltip" title="关于保障用户的隐私" href="<?=site_url('about/privacy');?>">
+		<a class="tooltip" title="「心动」保障用户的隐私" href="<?=site_url('about/privacy');?>">
 			隐私声明
 		</a> |
-		<a class="tooltip" title="通过Email联系Single Club的开发团队" href="mailto:chepy.v@gmail.com?subject=Hi,「Single Club」">
+		<a class="tooltip" title="通过Email联系「心动」的开发团队" href="mailto:chepy.v@gmail.com?subject=Hi,「心动」~">
 			联系我们
 		</a> | 
-		<a class="tooltip" title="Single Club自由、平等、开放，欢迎广大的开发者、创业者加入我们的团队。" href="mailto:chepy.v@gmail.com?subject=我想加入「Single Club」">
-			加入我们
-		</a> |
+
 		<a class="tooltip" title="你的意见将成为Single Club的下一项任务" href="<?=site_url('feedback');?>">
 			意见反馈
 		</a> |
+		<a class="tooltip" title="有关恋爱的一些事一些情" href="<?=site_url('about/');?>">
+			恋爱宣言
+		</a> | 
 		<a title="单身对社会对他人多大的危害呢？看看吧。" target="_blank" class="tooltip" href="http://e.soso.com/2010/11_20.html?cid=w.s.monthlyq&ch=w.s.monthlyq">
 			单身成本
 		</a>

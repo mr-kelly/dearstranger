@@ -7,11 +7,20 @@
 		 */
 		function random() {
 			login_redirect();
+			$current_user = get_user();
 			
+			// 如果用户是男的，随机给他女的～反之依然
+			$gender = '男';
+			if ( $current_user['profile']['gender'] == '男' ) {
+				$gender = '女';
+			}
 			
 			$this->load->model('user_model');
-			$user = $this->user_model->get_random_user();
-			redirect( '/user/'. $user['id'] );
+			$user = $this->user_model->get_random_user( array(
+				'gender'=> $gender,
+				'user_id !=' => $current_user['id'],   // 不随机到自己
+			));
+			redirect( '/user/'. $user['user_id'] );
 		}
 		
 		function user_lookup( $user_id ) {
@@ -50,8 +59,8 @@
 				$config['upload_path'] = $avatar_path;
 				$config['allowed_types'] = 'gif|jpg|png';
 				$config['max_size'] = '2048';   //可以上传2MB
-				$config['max_width']  = '2024';
-				$config['max_height']  = '1768';
+				//$config['max_width']  = '2024';
+				//$config['max_height']  = '1768';
 				$config['overwrite'] = true;  // 覆盖
 				//$config['encrypt_name'] = true;
 				$config['file_name'] = $user['id'] . '.png' ;
@@ -303,7 +312,7 @@
 		 */
 		function ajax_get_users_by_city( $province_id, $city_id ) {
 			$this->load->model('user_model');
-			$city_users = $this->user_model->get_users_by_city( $province_id, $city_id );
+			$city_users = $this->user_model->get_users_by_city( $province_id, $city_id, $this->config->item('per_page') );
 			
 			kk_show_view('general/users_list_view', array( 'users_list'=>$city_users)) ;
 		}
