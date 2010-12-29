@@ -47,7 +47,7 @@
 								<?=$me['profile']['nickname'];?>
 							</a>
 							<br />
-							<img style="margin-bottom:-5px;" height="18" src="<?=static_url(images/youfeel_index.gif);?>" />
+							<img style="margin-bottom:-5px;" height="18" src="<?=static_url('images/youfeel_index.gif');?>" />
 							<?=$me['profile']['feel_index'];?>
 						</div>
 						
