@@ -19,8 +19,15 @@
 				<a href="<?=site_url('about');?>">
 					<img src="<?=static_url('images/home_intro.jpg');?>" />
 				</a>
+				
+				
+				<a href="<?=site_url('oauth/authorize_link');?>">
+					<img src="<?=static_url('images/home_login_button.jpg');?>" />
+				</a>
+				
 				<br class="clearboth" />
 			</div>
+			
 			<?php endif; ?>
 			
 			

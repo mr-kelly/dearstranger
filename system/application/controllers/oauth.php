@@ -62,7 +62,7 @@
 							'gender' => ( $me['gender'] == 'm' ) ? '男' : '女',
 							
 							'website' => $me['url'],
-							'birth' => '',
+							'birth' => '1989-6-26',
 							'love' => '', // 恋爱状态
 							'gender' => '',
 							'height' => '',

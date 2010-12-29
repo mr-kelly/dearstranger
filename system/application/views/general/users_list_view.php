@@ -16,7 +16,7 @@
 						<div class="user_show">
 							<div class="user_avatar">
 								<a target="_blank" href="<?=site_url('user/'. $user['id']);?>" title="来自<?=$province['province_name'];?><?=$city['city_name'];?>的<?=$user['profile']['nickname'];?>">
-									<img width="100" src="<?=$user['profile']['image_url'];?>" />
+									<img height="100" src="<?=$user['profile']['image_url'];?>" />
 								</a>
 							</div>
 							<div class="user_intro">

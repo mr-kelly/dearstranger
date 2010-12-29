@@ -14,13 +14,14 @@ $config['oauth_callback'] = 'http://localhost:8888/xxmm/oauth';
 
 // 当评论了对方时，通知对方的评论~
 $config['comment_when_feel'] = 'Hi. "%s"对你心动了！你可以点击链接 http://xindong.mrkelly.cc%s 看看他的资料、照片哦。-- 幸福从心动开始！%s';
+
 $config['comment_when_mutual'] = '你和%s互相之间心动了！ 心动不如行动，进入网址%s查看他的详细资料吧！%s';
 
 
 
 $config['invite_specify'] = 'Hi.有人邀请你加入「心动」恋爱网络，点击这里看看: %s ，爱情说不定从这里开始呢 ' . date('Y-m-d H:i:s');
 
-$config['invite_weibo'] = '我加入了「心动」恋爱网络, 在这里交朋友,寻找心动对象, 网址 http://xindong.mrkelly.cc ';
+$config['invite_weibo'] = '你喜欢我吗? 对我「心动」吗? ~微博应用"心动恋爱网络", 寻觅你的“心动”对象, 心动不如行动,让恋爱进入2.0时代啦. 应用网址http://xindong.mrkelly.cc ';
 
 $config['invite_success'] = '你要邀请的%s已经加入「心动」！他的资料网址是%s';
 

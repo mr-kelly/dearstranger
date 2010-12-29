@@ -11,7 +11,7 @@
 		谢谢<a href="http://t.sina.com.cn/1736829677">@唐小晶tyj</a> 小朋友，后来想了「亲爱陌生人」这个名字;
 	</p>
 	<p>
-		谢谢<a href="http://t.sina.com.cn/1736829677">@唐小晶tyj</a>小朋友，听了动心这首歌，想到了「动心」这个名字;
+		谢谢<a href="http://t.sina.com.cn/temporaryrenee">@temporaryrenee</a>小朋友，听了动心这首歌，想到了「动心」这个名字;
 	</p>
 	<p>
 		谢谢我自己<a href="http://t.sina.com.cn/mrkelly">@公的Kelly</a>，把动心两个字调转来，成「心动」了...^_^

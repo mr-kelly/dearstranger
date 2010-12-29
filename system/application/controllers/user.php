@@ -382,8 +382,12 @@
 				
 				
 				
-				// 当发现双方双爱..TODO
-				
+				// 当发现双方双爱.. 发评论通知！
+				$this->load->model('feel_model');
+				if ( $this->feel_model->is_feel( $target_user['id'], $current_user['id'] ) ) {
+					$this->t_sina->reply_last_wb( $target_user['t_sina_id'], sprintf( $this->config->item('comment_when_mutual'), $current_user['profile']['nickname'], $this->config->item('formal_url').site_url('user/'.$current_user['id']) , date('Y-m-d H:i:s') ));
+					$this->t_sina->reply_last_wb( $current_user['t_sina_id'], sprintf( $this->config->item('comment_when_mutual'), $target_user['profile']['nickname'], $this->config->item('formal_url').site_url('user/'.$target_user['id']), date('Y-m-d H:i:s') ));
+				}
 				
 				
 				
