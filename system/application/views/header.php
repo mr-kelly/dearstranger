@@ -63,7 +63,9 @@
 </head>
 <body>
 
-<div id="loading"></div>
+<div id="loading">
+	请稍候...<img src="<?=static_url('images/loading.gif');?>" />
+</div>
 
 <div id="header">
 	

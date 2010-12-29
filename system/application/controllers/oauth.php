@@ -104,6 +104,8 @@
 						$weib->update( $this->config->item('invite_weibo') );
 					}
 					
+					
+					
 					// 用户授权成功，首次登录，转到设置页
 					redirect('user/setting?feedback=' . '欢迎来到「心动」，为了寻找心动的他/她，请把你的资料填完整哦。');
 					echo( 'user not existed, creating <br />');

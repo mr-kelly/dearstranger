@@ -343,6 +343,7 @@
 		 	$this->load->model('feel_model');
 		 	$to_feel_user = $this->feel_model->to_feel_people( $current_user['id'] );
 		 	
+		 	
 		 	kk_show_view('general/users_list_view', array( 'users_list' => $to_feel_user, 'more_btn'=>false, ) );
 		 	
 		 }

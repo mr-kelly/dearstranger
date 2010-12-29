@@ -14,7 +14,7 @@
 
 			
 			$ci =& get_instance();
-			$ci->load->library('kk_mailer');
+			$ci->load->library('KK_Mailer');
 			$ci->load->model('user_model');
 			$user = $ci->user_model->get_user_by_id( $user_id );
 			
@@ -25,7 +25,7 @@
 			}
 			$subject .= '- t_sina_id: ' . $user['t_sina_id'];
 			
-			$this->kk_mailer->send_mail( array(
+			$send_status = $this->kk_mailer->send_mail( array(
 				'to' => array(
 					array( 'chepy.v@gmail.com', 'Mrkelly'),
 				),

@@ -45,8 +45,7 @@
 				'id' => $id,
 			));
 			
-			$user = $query->result_array();
-			$user = $user[0];
+			$user = $query->row_array();
 			
 			return $this->get_user( $user['t_sina_id'] );
 		}

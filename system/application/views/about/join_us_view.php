@@ -30,6 +30,8 @@
 	<p>Make It Happen 是多么简单的一句话，它代表着用行动成就未来。</p>
 	<p>或许你怀抱激情、胸怀大志，却终日屈屈不得志，没有将行动付诸实践。那么，请让你的梦想起飞、你的理想实现，让一切发生吧。</p>
 	
+	
+	<h2>加入理由、个人信息填写</h2>
 	<form method="post" action="<?=site_url('about/join_us');?>">
 		<textarea name="content"></textarea>
 		<button type="submit" class="btn">
@@ -38,6 +40,16 @@
 	</form>
 	
 </div>
+
+
+	<div id="sidebar">
+		<?php
+			$this->load->view('sidebar/about_widget');
+		?>		
+		<?php
+			$this->load->view('sidebar/feedback_widget');
+		?>
+	</div>
 
 <?php
 	$this->load->view('footer');

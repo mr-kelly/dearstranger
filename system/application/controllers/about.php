@@ -9,7 +9,13 @@
 			kk_show_view('about/index_view', $data );
 		}
 		
-		
+		// 隐私政策页
+		function privacy() {
+			$data = array(
+				'page_title' => '隐私政策',
+			);
+			kk_show_view('about/privacy_view', $data);
+		}
 		function thank() {
 			$data = array(
 				'page_title' => '鸣谢「心动」走过的一些事，一些人...',
@@ -169,4 +175,8 @@
 			
 			kk_show_view('general/general_view', $data );
 		}
+		
+		
+		
+		
 	}

@@ -4,8 +4,26 @@
 	<div class="sidebar_widget_content">
 		<ul>
 			<li>
-				起源与介绍
+				<a href="<?=site_url('about');?>">
+					起源与介绍
+				</a>
 			</li>
+			<li>
+				<a href="<?=site_url('about/join_us');?>">
+					加入我们
+				</a>
+			</li>
+			<li>
+				<a href="<?=site_url('about/thank');?>">
+					特别鸣谢
+				</a>
+			</li>
+			<li>
+				<a href="<?=site_url('about/privacy');?>">
+					隐私政策
+				</a>
+			</li>
+			
 		</ul>
 	</div>
 </div>

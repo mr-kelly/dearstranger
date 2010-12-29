@@ -41,6 +41,7 @@
 	<h2>发到新浪微博</h2>
 	
 	<form method="post" action="<?=site_url('about/invite_weibo');?>">
+		
 		<textarea rows="3" cols="50" name="content"><?php
 				$ci =& get_instance(); 
 				$ci->load->library('t_sina');
@@ -64,11 +65,14 @@
 	
 </div>
 
-<div id="sidebar">
-	<?php
-		$this->load->view('sidebar/user_widget');
-	?>
-</div>
+	<div id="sidebar">
+		<?php
+			$this->load->view('sidebar/about_widget');
+		?>		
+		<?php
+			$this->load->view('sidebar/feedback_widget');
+		?>
+	</div>
 
 <?php
 	$this->load->view("footer");

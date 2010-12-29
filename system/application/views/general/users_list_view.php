@@ -58,6 +58,6 @@
 					<?php
 						// 没找到相应的user...?
 						if ( $users_list == array() ) {
-							echo 'nothing yet';
+							echo '还没有！';
 						}
 					?>
