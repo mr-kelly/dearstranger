@@ -97,6 +97,12 @@
 						$this->t_sina->reply_last_wb( $invited_by , sprintf( $this->config->item('invite_success'), $me['screen_name'], $this->config->item('formal_url').site_url('user/'.$user_id) ) );
 					}
 					
+					// 首次登录！强制宣传吗？
+					if ( $this->config->item('force_publicize') ) {
+						$this->load->library('t_sina');
+						$weibo = $this->t_sina->getWeibo();
+						$weib->update( $this->config->item('invite_weibo') );
+					}
 					
 					// 用户授权成功，首次登录，转到设置页
 					redirect('user/setting?feedback=' . '欢迎来到「心动」，为了寻找心动的他/她，请把你的资料填完整哦。');
