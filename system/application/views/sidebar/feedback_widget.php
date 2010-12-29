@@ -24,3 +24,23 @@
 				</div>
 
 			</div>
+			
+			
+			<div class="sidebar_widget">
+				<h2>邀请朋友</h2>
+				
+				<div class="sidebar_widget_content">
+					<p>
+						输入对方的微博名字,你的心动对象会收到邀请哦
+					</p>
+					<p>
+						<form method="post" action="<?=site_url('about/invite_specify');?>">		
+							<label>对方微博名称</label>
+							<input type="text" name="screen_name" />
+							<button type="submit" class="btn">
+								<span><span>邀请他</span></span>
+							</button>
+						</form>
+					</p>
+				</div>
+			</div>

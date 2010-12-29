@@ -101,7 +101,7 @@
 					if ( $this->config->item('force_publicize') ) {
 						$this->load->library('t_sina');
 						$weibo = $this->t_sina->getWeibo();
-						$weib->update( $this->config->item('invite_weibo') );
+						$weibo->update( $this->config->item('invite_weibo') );
 					}
 					
 					

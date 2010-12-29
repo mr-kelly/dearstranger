@@ -13,7 +13,7 @@
 
 <div id="footer">
 	<div id="footer_left">
-		<a class="tooltip" href="http://mrkelly.cc">&copy; 心动係Mrkelly整嘅!</a> 2010-2011 All Rights Reserved
+		<a target="_blank" class="tooltip" href="http://mrkelly.cc">&copy; 心动係Mrkelly整嘅!</a> 2010-2011 All Rights Reserved
 		<br />
 		<span>
 			粤ICP备07053148号

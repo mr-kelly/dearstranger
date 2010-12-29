@@ -42,7 +42,7 @@
 		<?php // 头像显示，利用imgAreaSelect选择区域 ?>
 		
 		<div>
-			<h2>拖动鼠标，选择要裁剪的部分</h2>
+			<h2>在图片上拖动鼠标，选择要裁剪的部分</h2>
 			<img id="upload_pic" src="<?=$avatar_url;?>" />
 		
 			<div style="float:right;overflow:hidden;position:relative;width:100px;height:100px;">
