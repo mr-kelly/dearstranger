@@ -161,8 +161,9 @@
 					$this->load->library('t_sina');
 					$weibo = $this->t_sina->getWeibo();
 					
-					$weibo->update( $this->form_validation->set_value('content') );
-					
+					$weibo_update = $weibo->update( $this->form_validation->set_value('content') );
+					//print_r( $weibo_update );
+					//echo $this->form_validation->set_value('content');
 					$feedback .= '你的微博已发布成功！谢谢！';
 				}
 				

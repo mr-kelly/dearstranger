@@ -10,10 +10,26 @@
 
 
 
+<?php // google 广告 ?>
+<div id="ad">
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-9928587148743461";
+	/* 468x60, 创建于 10-12-3 */
+	google_ad_slot = "0195707447";
+	google_ad_width = 468;
+	google_ad_height = 60;
+	//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</div>
 
 <div id="footer">
 	<div id="footer_left">
-		<a target="_blank" class="tooltip" href="http://mrkelly.cc">&copy; 心动係Mrkelly整嘅!</a> 2010-2011 All Rights Reserved
+		官方微博<a href="http://t.sina.com.cn/wbsingleclub">@心动恋爱网络</a>
+		/
+		<a target="_blank" class="tooltip" href="http://t.sina.com.cn/mrkelly">心动係Mrkelly整嘅!</a> 2010-2011 All Rights Reserved
 		<br />
 		<span>
 			粤ICP备07053148号
@@ -56,20 +72,7 @@
 </div>
 
 
-<?php // google 广告 ?>
-<div id="ad">
-	<script type="text/javascript"><!--
-	google_ad_client = "pub-9928587148743461";
-	/* 468x60, 创建于 10-12-3 */
-	google_ad_slot = "0195707447";
-	google_ad_width = 468;
-	google_ad_height = 60;
-	//-->
-	</script>
-	<script type="text/javascript"
-	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-	</script>
-</div>
+
 
 </body>
 </html>

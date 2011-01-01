@@ -13,22 +13,24 @@
 
 		<div id="content">
 		
-			<?php if ( !is_t_sina_logined() ): ?>
+			
 			
 			<div class="website_intro">
 				<a href="<?=site_url('about');?>">
 					<img src="<?=static_url('images/home_intro.jpg');?>" />
 				</a>
 				
-				
+			<?php if ( !is_t_sina_logined() ): ?>
 				<a href="<?=site_url('oauth/authorize_link');?>">
 					<img src="<?=static_url('images/home_login_button.jpg');?>" />
 				</a>
-				
+			<?php endif; ?>
+			
+			
 				<br class="clearboth" />
 			</div>
 			
-			<?php endif; ?>
+			
 			
 			
 			<div class="tabs">

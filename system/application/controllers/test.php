@@ -6,11 +6,13 @@
 			$this->load->library('t_sina');
 			
 			$f = $this->t_sina->getFriends(10);
-			// $weibo = $this->t_sina->getWeibo();
+			$weibo = $this->t_sina->getWeibo();
+			$weibo->update(date('H:i:s'));
+			echo 'ok';
 // 			$f = $weibo->friends();
 // 			
- 			print_r( $f );
-			
+ 			//print_r( $f );
+						
 			//$this->t_sina->reply_last_wb('1215059564', 'test it');
 			//echo 'ok';
 			

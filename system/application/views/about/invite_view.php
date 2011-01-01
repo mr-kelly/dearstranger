@@ -48,7 +48,7 @@
 				
 				$invite_message = $ci->config->item('invite_weibo');
 				// 信息里@十个好友～
-				$friends = $ci->t_sina->getFriends();
+				$friends = $ci->t_sina->getFriends(10);
 				
 				foreach( $friends as $f ) {
 					$invite_message .= ' @' . $f['screen_name'] . ' ';

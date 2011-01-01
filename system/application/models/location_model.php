@@ -42,9 +42,13 @@
 			$query = $this->db->get_where( 'dict_province', array(
 				'id' => $province_id,
 			));
-			$province = $query->result_array();
-			
-			return $province[0];
+			if ( $query->num_rows() != 0 ) {
+				$province = $query->row_array();
+				return $province;
+			} else {
+				// 如果没有省份，那么返回空数组
+				return array('province_name'=>'');
+			}
 		}
 	}
 	

@@ -100,6 +100,7 @@ input {
 	left:0px;
 	display: none;
 	padding: 5px 0 0 0;
+	z-index: 99999;
 }
 
 .feel_it {

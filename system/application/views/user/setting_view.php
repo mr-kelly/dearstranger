@@ -281,7 +281,7 @@
 								
 								foreach ( $educations as $education ):
 							?>
-								<option <?=( $current_user['profile']['education'] == $target ) ? 'selected="selected"' : ''; ?>><?=$education;?></option>
+								<option <?=( $current_user['profile']['education'] == $education ) ? 'selected="selected"' : ''; ?>><?=$education;?></option>
 							<?php
 								endforeach;
 							?>

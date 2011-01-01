@@ -135,6 +135,7 @@
 		 *	随机获得user, 并通过用户资料函数，获得资料
 		 */
 		function get_random_users() {
+			$this->db->order_by('id', 'random');
 			$query = $this->db->get('users', 20 );
 			$users = $query->result_array();
 			
