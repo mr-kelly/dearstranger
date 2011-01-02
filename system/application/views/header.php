@@ -59,7 +59,7 @@
 		<script type="text/javascript" src="<?=static_url('js/jquery.imgareaselect/scripts/jquery.imgareaselect.min.js');?>"></script>
 		
 
-	<title><?= ( isset( $page_title ) ) ? $page_title : '心动 :: 微博交友、恋爱，寻找你心仪的恋爱对象、寻找心动的他/她'; ?></title>
+	<title><?= ( isset( $page_title ) ) ? $page_title : '心动恋爱网络:: 微博交友、恋爱，寻找你心动的恋爱对象、心动的他/她'; ?></title>
 	
 	<script type="text/javascript">
 	

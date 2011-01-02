@@ -15,6 +15,7 @@
 			
 			$this->load->library('T_sina');
 			$this->load->model('user_model');
+
 			
 			$last_key = $this->t_sina->getAccessToken();
 			
@@ -31,12 +32,13 @@
 					// 未登录~，session可能滞留了。清空它
 					$this->session->unset_userdata('last_key');
 					
+					print_r( $me );
 					//print_r( $me );
 					exit('failed! have logined');
 					
 					// 清空登录数据之后，重新获取一次
-					$weibo = $this->t_sina->getWeibo();
-					$me = $weibo->verify_credentials();
+					//$weibo = $this->t_sina->getWeibo();
+					//$me = $weibo->verify_credentials();
 				}
 				
 				/** 
@@ -51,9 +53,15 @@
 					
 					// 微博提供的头像图片太小了， 改成180的
 					$image_url = str_replace( '/50/', '/180/', $me['profile_image_url']);
+					
+					// 内在指数库
+					$this->load->library('Inner_Index');
 					$this->user_model->create_or_update_user_profile( $user_id, array(
 						'image_url' => $image_url,
 						'feel_index' => 0,
+						'page_view' => 0,
+						'inner_index' =>  0,
+
 						//'content' => json_encode( array(
 							'nickname' => $me['screen_name'],
 							'province_id' => $me['province'],
@@ -62,9 +70,8 @@
 							'gender' => ( $me['gender'] == 'm' ) ? '男' : '女',
 							
 							'website' => $me['url'],
-							'birth' => '1989-6-26',
+							'birth' => '',
 							'love' => '', // 恋爱状态
-							'gender' => '',
 							'height' => '',
 							'face' => '',
 							'phone' => '',
@@ -84,6 +91,8 @@
 							'like_personages' => '',
 							'motto' => '',
 							'standard' => '',
+							
+
 							
 						//)),
 						
@@ -107,7 +116,7 @@
 					
 					
 					// 用户授权成功，首次登录，转到设置页
-					redirect('user/setting?feedback=' . '欢迎来到「心动」，为了寻找心动的他/她，请把你的资料填完整哦。');
+					redirect('user/setting?feedback=' . '欢迎来到「心动」，为了寻找心动的他/她，请把你的资料填完整哦。 你填写的资料将会分析出你的“<b>内涵指数</b>”');
 					echo( 'user not existed, creating <br />');
 					
 				} else {

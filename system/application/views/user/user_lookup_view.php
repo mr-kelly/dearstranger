@@ -14,6 +14,15 @@
 				<img style="margin-bottom:-5px;" height="22" src="<?=static_url('images/youfeel_index.gif');?>" />
 				<span><?=$user['feel_index'];?></span>
 			</div>
+			<div>
+				<img style="margin-bottom:-5px;" height="22" src="<?=static_url('images/inner_index.gif');?>" />
+				<span><?=$user['profile']['inner_index'];?>%</span>
+			</div>
+			<div>
+				<a class="btn" href="<?=site_url('user/show_inner_index');?>">
+					<span><span>告诉大家你的内涵指数</span></span>
+				</a>
+			</div>
 
 			<br />
 			<?php
@@ -34,6 +43,7 @@
 					<span class="user_info"><?=$user['profile']['gender'];?></span>
 				</li>
 				
+				<?php if ( isset( $user['profile']['birth'] ) && $user['profile']['birth'] != '' ): ?>
 				<li>
 					<span class="user_label">年龄:</span>
 					<?php
@@ -43,16 +53,23 @@
 					?>
 					<span class="user_info"><?=$ci->humanize->age( $user['profile']['birth'] );?>岁</span>
 				</li>
+				<?php endif; ?>
 				
+				
+				<?php if ( isset( $user['profile']['birth'] ) && $user['profile']['birth'] != '' ): ?>
 				<li>
 					<span class="user_label">生日:</span>
 					<span class="user_info"><?=$user['profile']['birth'];?></span>
 				</li>
+				<?php endif; ?>
+				
+				<?php if ( isset( $user['profile']['birth'] ) && $user['profile']['birth'] != '' ): ?>
 				<li>
 					<span class="user_label">星座:</span>
 
 					<span class="user_info"><?=$ci->humanize->constellation( $user['profile']['birth']);?></span>
 				</li>
+				<?php endif; ?>
 				
 				<li>
 					<span class="user_label">所在地:</span>
@@ -87,7 +104,7 @@
 						<?php
 							else:
 						?>
-							双方有feel才可以查看
+							双方“心动”才可以查看
 						<?php
 							endif;
 						?>
@@ -105,7 +122,7 @@
 							if ( is_feel ( $user['id'] ) == 'mutual' ) {
 								echo $user['profile']['phone'];
 							} else {
-								echo '双方有feel才可以查看';
+								echo '双方“心动”才可以查看';
 							}
 						?>
 						
@@ -122,7 +139,7 @@
 							if ( is_feel ( $user['id'] ) == 'mutual' ) {
 								echo $user['profile']['qq'];
 							} else {
-								echo '双方有feel才可以查看';
+								echo '双方“心动”才可以查看';
 							}
 						?>
 						
@@ -137,7 +154,7 @@
 							if ( is_feel ( $user['id'] ) == 'mutual' ) {
 								echo $user['profile']['msn'];
 							} else {
-								echo '双方有feel才可以查看';
+								echo '双方“心动”才可以查看';
 							}
 						?>
 					</span>
@@ -331,6 +348,8 @@
 
 <div id="sidebar">
 	<?php $this->load->view('sidebar/user_widget'); ?>
+	<?php $this->load->view('sidebar/recommend_widget'); ?>
+	<?php $this->load->view('sidebar/feedback_widget'); ?>
 </div>
 
 

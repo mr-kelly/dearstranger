@@ -8,6 +8,12 @@
 					起源与介绍
 				</a>
 			</li>
+			
+			<li>
+				<a href="<?=site_url('about/we');?>">
+					团队介绍
+				</a>
+			</li>
 			<li>
 				<a href="<?=site_url('about/join_us');?>">
 					加入我们

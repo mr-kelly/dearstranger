@@ -18,6 +18,25 @@
 		
 		}
 		
+		/**
+		 *	心动流 - 让心动信息像timeline一样流动起来
+		 */
+		function feel_stream( $limit=5) {
+			$ci =& get_instance();
+			$ci->load->model('user_model');
+			
+			$this->db->order_by('created', 'desc' );
+			$query = $this->db->get('feel', $limit );
+			$feel = $query->result_array();
+			
+			foreach ( $feel as $key=>$f ) {
+				$feel[$key]['from_user'] = $ci->user_model->get_user_by_id( $f['from_user_id'] );
+				$feel[$key]['to_user'] = $ci->user_model->get_user_by_id( $f['to_user_id'] );
+			}
+			
+			return $feel;
+		}
+		
 		
 		/**
 		 *	有feel指数排行~~  获得有feel指数最高的~

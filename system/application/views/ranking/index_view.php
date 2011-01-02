@@ -42,6 +42,9 @@
 		$this->load->view('sidebar/user_widget');
 	?>
 	<?php
+		$this->load->view('sidebar/recommend_widget');
+	?>
+	<?php
 		$this->load->view('sidebar/feedback_widget');
 	?>	
 </div>

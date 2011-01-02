@@ -20,14 +20,22 @@
 				'gender'=> $gender,
 				'user_id !=' => $current_user['id'],   // 不随机到自己
 			));
-			redirect( '/user/'. $user['user_id'] );
+			redirect( '/user/'. $user['id'] );
 		}
 		
+		/**
+		 *	User Lookup
+		 */
 		function user_lookup( $user_id ) {
 			$this->load->model('user_model');
 			$user = $this->user_model->get_user_by_id( $user_id );
 			
-			$data = array( 'user' => $user );
+			// 用户页面查看量+1
+			$this->user_model->up_user_page_view( $user_id );
+			
+			$data = array( 'user' => $user,
+							'page_title' => $user['profile']['nickname'] . ' - 心动恋爱网络',
+					);
 			kk_show_view('user/user_lookup_view', $data );
 			
 		}
@@ -295,6 +303,31 @@
 			
 		}
 		
+		/**
+		 *	发布微博公布你的“内涵指数”
+		 */
+		function show_inner_index() {
+			login_redirect();
+			
+			$this->load->library('T_sina');
+			
+			$user = get_user();
+			
+			$weibo = $this->t_sina->getWeibo();
+			if ( $user['profile']['inner_index'] > 50 ) {
+				$inner_rating = '是一个很有内涵的人！';
+			} else if ( $user['profile']['inner_index'] > 30 ) {
+				$inner_rating = '挺有内涵的~';
+			} else {
+				$inner_rating = '内涵程度有待改进~';
+			}
+			
+			$weibo->update( sprintf($this->config->item('weibo_inner_index'), $user['profile']['inner_index'].'%', $inner_rating ) );
+			
+			kk_show_view('general/general_view', array(
+				'feedback' => '你的内涵指数已经在微博告诉了大家哦~',
+			));
+		}
 		
 		/**
 		 *	随机获取用户~ 返回ajax页

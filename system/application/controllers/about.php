@@ -9,6 +9,17 @@
 			kk_show_view('about/index_view', $data );
 		}
 		
+		
+		/**
+		 *	我们的团队
+		 */
+		function we() {
+			$data = array();
+			
+			kk_show_view( 'about/we_view', $data );
+			
+		}
+		
 		// 隐私政策页
 		function privacy() {
 			$data = array(

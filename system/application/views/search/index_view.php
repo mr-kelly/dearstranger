@@ -242,7 +242,10 @@
 </div>
 
 <div id="sidebar">
-
+	<?php $this->load->view('sidebar/user_widget'); ?>
+	<?php $this->load->view('sidebar/feel_stream_widget'); ?>
+	<?php $this->load->view('sidebar/ranking_widget'); ?>
+	<?php $this->load->view('sidebar/feedback_widget'); ?>
 </div>
 
 

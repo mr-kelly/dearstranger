@@ -17,7 +17,8 @@ $config['comment_when_feel'] = 'Hi. "%s"对你心动了！你可以点击链接 
 
 $config['comment_when_mutual'] = '你和%s互相之间心动了！ 心动不如行动，进入网址%s查看他的详细资料吧！%s';
 
-
+// 发一条微博说自己的内涵指数
+$config['weibo_inner_index'] = '我的内涵指数是%s %s。 这里可以测试你的内涵指数哦 http://xindong.mrkelly.cc ';
 
 $config['invite_specify'] = 'Hi.有人邀请你加入「心动」恋爱网络，点击这里看看: %s ，爱情说不定从这里开始呢 ' . date('Y-m-d H:i:s');
 
@@ -372,11 +373,13 @@ $config['proxy_ips'] = '';
 
 
 $config['profile_genders'] =  array(
+									'',
 									'男',
 									'女',
 								);
 								
 $config['profile_loves'] = array(
+								'',
 								'单身 想恋爱',
 								'单身',
 								'单身 不想交朋友',
@@ -389,6 +392,7 @@ $config['profile_loves'] = array(
 							);
 							
 $config['profile_heights'] = array(
+								'',
 								'150cm以下',
 								'150-155cm',
 								'156-160cm',
@@ -406,6 +410,7 @@ $config['profile_heights'] = array(
 							
 							
 $config['profile_faces'] =  array(
+								'',
 								'倾国倾城',
 								'还不错',
 								'大众脸',
@@ -414,6 +419,7 @@ $config['profile_faces'] =  array(
 							);
 							
 $config['profile_targets'] = array(
+								'',
 								'普通朋友',
 								'谈恋爱',
 								'结婚',
@@ -438,6 +444,7 @@ $config['profile_constellation'] = array(
 
 
 $config['profile_education'] = array(
+								'',
 								'中学',
 								'中专',
 								'技校',
@@ -448,6 +455,7 @@ $config['profile_education'] = array(
 );
 
 $config['profile_jobs'] = array(
+							'',
 							'学生',
 							'计算机/互联网/通讯',
 							'销售',
@@ -471,6 +479,7 @@ $config['profile_jobs'] = array(
 );
 
 $config['profile_salary'] = array(
+								'',
 								'还没有',
 								'2000以下',
 								'2000-4000',
@@ -480,6 +489,7 @@ $config['profile_salary'] = array(
 );
 
 $config['profile_figure'] = array(
+							'',
 							'苗条',
 							'匀称',
 							'健壮',

@@ -43,6 +43,9 @@
 								?>
 								
 								
+								<br />
+								<img style="margin-bottom: -5px;" src="<?=static_url('images/inner_index.gif');?>" />
+								<span><?=$user['profile']['inner_index'];?>%</span>
 								
 								
 								<br />
@@ -57,7 +60,7 @@
 					
 					<?php
 						// 没找到相应的user...?
-						if ( $users_list == array() ) {
+						if ( $users_list == null ) {
 							echo '还没有！';
 						}
 					?>

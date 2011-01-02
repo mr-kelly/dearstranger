@@ -123,13 +123,47 @@
 				) + $data );
 			} else {
 				// 已存在, 修改
-				$this->db->where('user_id', $user_id);
-				$this->db->update('user_profiles', $data);
+				$this->load->library('Inner_Index');
+				
+				// 先获取现有用户的profile，用于更新“内涵指数”
+				$query = $this->db->get_where('user_profiles', array(
+					'user_id' => $user_id,
+				));
+				$profile = $query->row_array();
+				
+				$this->db->where('user_id', $user_id );
+				$this->db->update('user_profiles', $data + array(
+					// 更新用户的内涵指数
+					'inner_index' => $this->inner_index->get_inner_index( $profile ),
+				));
+				
+				
 				
 			}
 
 		}
 		
+		/**
+		 *	用户的页面查看量+1！
+		 */
+		function up_user_page_view( $user_id ) {
+			$current_user_page_view = $this->get_user_page_view($user_id);
+			$this->db->where('user_id', $user_id );
+			return $this->db->update('user_profiles', array(
+				'page_view' => ( $current_user_page_view +1 ),
+			));
+		}
+		/**
+		 *	获取用户页面查看量~
+		 */
+		function get_user_page_view( $user_id ) {
+			$query = $this->db->get_where('user_profiles', array(
+				'user_id' => $user_id,
+			));
+			$user_p = $query->row_array();
+			
+			return $user_p['page_view'];
+		}
 		
 		/**
 		 *	随机获得user, 并通过用户资料函数，获得资料
@@ -142,6 +176,28 @@
 			$return_users = array();
 			foreach ( $users as $user ) {
 				array_push( $return_users, $this->get_user_by_id( $user['id'] ));
+			}
+			
+			shuffle( $return_users );
+			
+			return $return_users;
+		}
+		
+		
+		/**
+		 *	获得一些推荐用户~
+		 
+				根据性别、城市、其他资料等随机推荐
+		 */
+		function get_recommend_users( $which ) {
+			$this->db->order_by('id', 'random');
+			$this->db->like( $which );
+			$query = $this->db->get('user_profiles', 10 );
+			
+			$users = $query->result_array();
+			$return_users = array();
+			foreach( $users as $user ) {
+				array_push( $return_users, $this->get_user_by_id( $user['user_id'] ));
 			}
 			
 			shuffle( $return_users );
@@ -205,7 +261,10 @@
 			$this->db->limit( $this->config->item('per_page') );
 			$query = $this->db->get_where('user_profiles', $data );
 			
-			return $query->row_array();
+			$user = $query->row_array();
+			$user = $this->get_user_by_id( $user['user_id'] );
+			
+			return $user;
 		}
 		
 		
@@ -262,4 +321,6 @@
 		function search_users_count($data ) {
 			return $this->search_users( $data, null, null, true );
 		}
+		
+
 	}

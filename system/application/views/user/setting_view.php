@@ -186,7 +186,7 @@
 								
 								foreach ( $jobs as $job ):
 							?>
-								<option <?=( $current_user['profile']['job'] == $target ) ? 'selected="selected"' : ''; ?>><?=$job;?></option>
+								<option <?=( $current_user['profile']['job'] == $job ) ? 'selected="selected"' : ''; ?>><?=$job;?></option>
 							<?php
 								endforeach;
 							?>
@@ -201,7 +201,7 @@
 								
 								foreach ( $salarys as $salary ):
 							?>
-								<option <?=( $current_user['profile']['salary'] == $target ) ? 'selected="selected"' : ''; ?>><?=$salary;?></option>
+								<option <?=( $current_user['profile']['salary'] == $salary ) ? 'selected="selected"' : ''; ?>><?=$salary;?></option>
 							<?php
 								endforeach;
 							?>

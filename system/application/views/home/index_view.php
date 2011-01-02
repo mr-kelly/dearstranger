@@ -66,7 +66,9 @@
 			<?php
 				$this->load->library('t_sina');
 				$this->load->view('sidebar/user_widget'); 
-				$this->load->view('sidebar/ranking_widget');
+				
+				$this->load->view('sidebar/recommend_widget');
+				$this->load->view('sidebar/feel_stream_widget'); 
 				$this->load->view('sidebar/feedback_widget');
 			?>
 			

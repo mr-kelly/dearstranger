@@ -49,6 +49,11 @@
 							<br />
 							<img style="margin-bottom:-5px;" height="18" src="<?=static_url('images/youfeel_index.gif');?>" />
 							<?=$me['profile']['feel_index'];?>
+							
+							<div>
+								<img style="margin-bottom:-5px;" height="18" src="<?=static_url('images/inner_index.gif');?>" />
+								<span><?=$me['profile']['inner_index'];?>%</span>
+							</div>
 						</div>
 						
 						<div class="user_widget_control">
@@ -92,5 +97,24 @@
 					<a href="<?=site_url('user/random');?>" class="tooltip btn" title="随机匹配一位对象，看缘分了！">
 						<span><span>随缘吧</span></span>
 					</a>
+				</div>
+			</div>
+			
+			<div class="sidebar_widget">
+				<h2>邀请朋友</h2>
+				
+				<div class="sidebar_widget_content">
+					<p>
+						输入对方的微博名字,你的心动对象会收到邀请哦
+					</p>
+					<p>
+						<form method="post" action="<?=site_url('about/invite_specify');?>">		
+							<label>对方微博名称</label>
+							<input type="text" name="screen_name" />
+							<button type="submit" class="btn">
+								<span><span>邀请他</span></span>
+							</button>
+						</form>
+					</p>
 				</div>
 			</div>

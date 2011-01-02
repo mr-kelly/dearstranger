@@ -39,9 +39,10 @@
 		<a class="tooltip" title="关于「心动」的起源、介绍" href="<?=site_url('about/');?>">
 			关于我们
 		</a> | 
-		<a class="tooltip" title="「心动」自由、平等、开放，欢迎广大的开发者、创业者加入我们的团队。" href="<?=site_url('about/join_us');?>">
-			加入我们
+		<a class="tooltip" title="是谁鼓捣了「心动恋爱网络」？" href="<?=site_url('about/we');?>">
+			团队介绍
 		</a> |
+
 		
 		<a class="tooltip" title="谢谢「心动」成长路上遇过的人" href="<?=site_url('about/thank');?>">
 			谢谢你们

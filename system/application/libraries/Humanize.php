@@ -65,6 +65,9 @@
 		 	输入 1989-6-26,  计算距离时间成timestamp，再转化实际年份多少天
 		 */
 		function age( $str_time ) {
+			if ( $str_time == '') {
+				return '';
+			}
 			$target = strtotime($str_time);
 			$now = time();
 			$datetime = getdate(strtotime($str_time));
@@ -85,7 +88,10 @@
 		
 		function constellation($str_time) 
 		{ 
-		
+			if ( $str_time == '' ) {
+				return '';
+			}
+			
 		$datetime = getdate(strtotime($str_time));
 		$month = intval( $datetime['mon'] );
 		$day = intval( $datetime['mday'] );
