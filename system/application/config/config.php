@@ -22,7 +22,7 @@ $config['weibo_inner_index'] = '我的内涵指数是%s %s。 这里可以测试
 
 $config['invite_specify'] = 'Hi.有人邀请你加入「心动」恋爱网络，点击这里看看: %s ，爱情说不定从这里开始呢 ' . date('Y-m-d H:i:s');
 
-$config['invite_weibo'] = '你喜欢我吗? 对我「心动」吗? ~微博应用"心动恋爱网络", 寻觅你的“心动”对象, 心动不如行动,让恋爱进入2.0时代啦. 应用网址http://xindong.mrkelly.cc ';
+$config['invite_weibo'] = '你喜欢我吗? 对我「心动」吗? ~微博应用"心动恋爱网络", 寻觅你的“心动”对象, 心动不如行动,让恋爱进入2.0时代啦. 这里找到我~http://xindong.mrkelly.cc/%s ';
 
 $config['invite_success'] = '你要邀请的%s已经加入「心动」！他的资料网址是%s';
 
