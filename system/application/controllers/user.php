@@ -27,6 +27,8 @@
 		 *	User Lookup
 		 */
 		function user_lookup( $user_id ) {
+			login_redirect();
+			
 			$this->load->model('user_model');
 			$user = $this->user_model->get_user_by_id( $user_id );
 			
@@ -328,6 +330,23 @@
 				'feedback' => '你的内涵指数已经在微博告诉了大家哦~',
 			));
 		}
+		
+		
+		/**
+		 *	将“心动”分享到微博
+		 */
+		 function show_xindong() {
+		 	login_redirect();
+		 	$user = get_user();
+		 	$this->load->library('T_sina');
+		 	$weibo = $this->t_sina->getWeibo();
+		 	
+		 	$weibo->update( sprintf($this->config->item('invite_weibo'), site_url('user/'.$user['id'])) );
+		 	
+			kk_show_view('general/general_view', array(
+				'feedback' => '你已经将「心动恋爱网络」分享到微博，介绍给大家了哦。',
+			));
+		 }
 		
 		/**
 		 *	随机获取用户~ 返回ajax页

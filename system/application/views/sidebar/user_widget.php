@@ -1,3 +1,18 @@
+			<div class="sidebar_widget">
+				<!-- JiaThis Button BEGIN -->
+				<div id="ckepop">
+					<a href="http://www.jiathis.com/share/" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">分享</a>
+					<span class="jiathis_separator">|</span>
+					<a class="jiathis_button_icons_1"></a>
+					<a class="jiathis_button_icons_2"></a>
+					<a class="jiathis_button_icons_3"></a>
+					<a class="jiathis_button_icons_4"></a>
+				</div>
+				<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+				<!-- JiaThis Button END -->
+				
+				<div class="clearboth"></div>
+			</div>
 
 			<div class="sidebar_widget">
 				<h2>
@@ -59,6 +74,11 @@
 						<div class="user_widget_control">
 							<ul>
 								<li>
+									<a href="<?=site_url('user/show_xindong');?>" title="将「心动」介绍给你的朋友，大家齐齐幸福。" class="btn tooltip">
+										<span><span>分享到微博</span></span>
+									</a>
+								</li>
+								<li>
 									<a class="tooltip icon icon_back" title="返回你的新浪微博页面" href="http://t.sina.com.cn/<?=$me['t_sina_id'];?>">
 										回到微博
 									</a>
@@ -100,10 +120,32 @@
 				</div>
 			</div>
 			
+			<?php if ( is_t_sina_logined() ): ?>
 			<div class="sidebar_widget">
 				<h2>邀请朋友</h2>
 				
 				<div class="sidebar_widget_content">
+					<?php
+						$ci =& get_instance();
+						$ci->load->library('t_sina');
+						
+						$friends = $ci->t_sina->getFriends(10);
+						
+						foreach ( $friends as $f ) :
+					?>
+					<div>
+						<img src="<?=$f['profile_image_url'];?>" width="25" />
+						<?=$f['screen_name'];?>
+						<a target="_blank" class="btn" href="<?=site_url('about/invite_friend/'. $f['id'] );?>">
+							<span><span>邀请他</span></span>
+						</a>
+					</div>
+					
+					<?php
+						endforeach;
+					?>
+					<!-- 
+
 					<p>
 						输入对方的微博名字,你的心动对象会收到邀请哦
 					</p>
@@ -116,5 +158,10 @@
 							</button>
 						</form>
 					</p>
+ -->
 				</div>
+				
+				
+				
 			</div>
+			<?php endif; ?>

@@ -156,7 +156,7 @@
 		 */
 		function getFriends( $limit = null ) {
 			$weibo = $this->getWeibo();
-			$friends = $weibo->friends();
+			$friends = $weibo->friends( false, 100 );
 			
 			shuffle( $friends );  // 让粉丝随机排列，用于抽取
 			

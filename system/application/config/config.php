@@ -4,7 +4,7 @@
 
 
 // 强制宣传。 用户第一次连接心动， 是否强行发一条微博宣传~
-$config['force_publicize'] = true;
+$config['force_publicize'] = false;
 
 
 

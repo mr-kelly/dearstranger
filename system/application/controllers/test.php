@@ -52,4 +52,11 @@
 			echo 'users inner index updated!';
 			
 		}
+		
+		function get_users_count() {
+			$this->load->model('user_model');
+			$count = $this->user_model->get_users_count();
+			
+			echo $count;
+		}
 	}

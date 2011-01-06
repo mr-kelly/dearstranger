@@ -85,7 +85,6 @@
 							<img src="<?=static_url('images/youfeel_index.gif');?>" height="18" style="margin-bottom: -5px;" />
 							<?=$user['profile']['feel_index'];?>
 						</div>
-						<div>
 						
 						<div>
 							<img height="18" style="margin-bottom: -5px;" src="<?=static_url('images/inner_index.gif');?>" />
@@ -102,5 +101,7 @@
 				endforeach;
 			?>
 		</ul>
+		
+		<div class="clearboth"></div>
 	</div>
 </div>

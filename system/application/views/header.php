@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -7,12 +6,15 @@
 	
 	<meta name="author" content="Mrkelly 陈霈霖,http://mrkelly.cc,chepy.v@gmail.com" />
 	<meta name="robots" content="all" />
-    <meta name="description" content="" /> 
+    <meta name="description" content="心动恋爱网络是一个创新特别的恋爱2.0交友婚介同城网站、微博应用。双方互相心动，获得对方的联系方式，进一步发展; 单方心动，对不起，对方不受你打扰。 让人们发现爱情之美，拒绝一夜情。" /> 
     <meta name="keywords" content="恋爱,交友,单身,心动" /> 
 	
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />  
 	
+<script language="javascript" src="http://g.qling.com/gogo1.php?uid=13124">
+</script>
+
 	<script type="text/javascript">
 		var $home_page = "<?=site_url('/');?>";
 		var $ajax_get_cities = "<?=site_url('user/ajax_get_cities/');?>";

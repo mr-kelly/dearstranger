@@ -231,6 +231,14 @@
 			
 		}
 		
+		/**
+		 *	获取当前总用户数
+		 */
+		function get_users_count() {
+			$query = $this->db->get('users');
+			return $query->num_rows();
+		}
+		
 		
 		
 		

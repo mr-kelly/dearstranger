@@ -160,6 +160,25 @@
 			
 		}
 		
+		/**
+		 *	
+		 */
+		function invite_friend ( $t_sina_id ) {
+			login_redirect();
+			
+			$current_user = get_user();
+			$this->load->library('t_sina');
+			$this->t_sina->reply_last_wb( $t_sina_id , 
+										sprintf('你的朋友"%s"邀请你加入「心动」恋爱交友微博应用, 按这里~%s', $current_user['profile']['nickname'], $this->config->item('formal_url') ));
+			
+			$feedback = '已经成功邀请了！';
+			
+			$data = array(
+				'feedback' => $feedback,
+			);
+			kk_show_view('general/general_view', $data );
+		}
+		
 		function invite_weibo() {
 			$feedback = null;
 			if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {

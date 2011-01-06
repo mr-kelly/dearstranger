@@ -1,3 +1,31 @@
+/*RESET
+-------------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-style: inherit; font-size: 100%; font-family: inherit; }
+:focus { outline: 0; }
+table { border-collapse: separate; border-spacing: 0; }
+a img, iframe { border: none; }
+ol, ul { list-style: none; }
+input, textarea, select, button { font-size: 100%; font-family: inherit; vertical-align:middle }
+select { margin: inherit; }
+ol { margin-left:2em; }
+
+/*CLEARFIX
+-------------------------------------------------------------- */
+.clearfix:after { /*/*/ content: "."; /* IE8 hack */ display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+.fr{ float:right}
+.fl{ float:left}
+
+/*FONT / COLOR
+-------------------------------------------------------------- */
+body{ font: small/20px Arial}
+a{color:#00C; text-decoration:underline}
+
+
+
+
 body {
 	font-size: 12px;
 	line-height: 18px;
@@ -357,6 +385,7 @@ form p {
 		
 		.sidebar_users_list li {
 			margin: 5px 0;
+			padding: 0;
 		}
 		
 		.sidebar_users_list_avatar {

@@ -41,14 +41,14 @@
 		/**
 		 *	有feel指数排行~~  获得有feel指数最高的~
 		 */
-		function feel_index_ranking_users() {
+		function feel_index_ranking_users( $limit = 20 ) {
 		
 			$this->load->model('user_model');
 			$ci =& get_instance();
 			
 			// 获得profile
 			$this->db->order_by('feel_index desc');
-			$query = $this->db->get('user_profiles', 10);
+			$query = $this->db->get('user_profiles', $limit );
 			
 			$users = $query->result_array();
 			
