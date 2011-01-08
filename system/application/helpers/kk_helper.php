@@ -31,7 +31,7 @@
 	function login_redirect() {
 		if ( ! is_t_sina_logined() ) {
 			// 未登录, 转走
-			redirect('user/login');
+			redirect('user/login?redirect=' . uri_string() );
 		}
 	}
 	

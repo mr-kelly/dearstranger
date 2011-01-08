@@ -32,7 +32,8 @@
 			
 			
 			
-			
+
+
 			<div class="tabs">
 				<ul>
 					<li>
@@ -55,9 +56,10 @@
 				</ul>
 				
 				
-				
+
 				<br class="clearboth" />
 			</div>
+
 			
 		</div>
 		

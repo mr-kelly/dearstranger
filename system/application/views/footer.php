@@ -11,7 +11,9 @@
 
 
 <?php // google 广告 ?>
+
 <div id="ad">
+
 	<script type="text/javascript"><!--
 	google_ad_client = "pub-9928587148743461";
 	/* 468x60, 创建于 10-12-3 */
@@ -20,10 +22,12 @@
 	google_ad_height = 60;
 	//-->
 	</script>
-	<script type="text/javascript"
+	<!--<script type="text/javascript"
 	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 	</script>
+	-->
 </div>
+
 
 <div id="footer">
 	<div id="footer_left">

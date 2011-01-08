@@ -12,8 +12,6 @@
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />  
 	
-<script language="javascript" src="http://g.qling.com/gogo1.php?uid=13124">
-</script>
 
 	<script type="text/javascript">
 		var $home_page = "<?=site_url('/');?>";
@@ -21,6 +19,7 @@
 	</script>
 	<script type="text/javascript" src="<?=static_url('js/lib.js');?>"></script>
 	
+
 	
 	<!--j UI -->
 	<script type="text/javascript" src="<?=static_url('js/ui/js/jquery-ui-1.8.4.min.js');?>"></script>
@@ -49,7 +48,15 @@
 	<!--jQuery AutoComplete-->
 	<script type="text/javascript" src="<?=static_url('js/jquery.autocomplete/jquery.autocomplete.min.js');?>"></script>
 	<link href="<?=static_url('js/jquery.autocomplete/jquery.autocomplete.css');?>" type="text/css" rel="stylesheet" />
+
+	<!-- jQuery Fancybox-->
+	<script type="text/javascript" src="<?=static_url('js/fancybox/jquery.mousewheel-3.0.4.pack.js');?>"></script>
+	<script type="text/javascript" src="<?=static_url('js/fancybox/jquery.fancybox-1.3.4.pack.js');?>"></script>
+	<link href="<?=static_url('js/fancybox/jquery.fancybox-1.3.4.css');?>" type="text/css" rel="stylesheet" />
 	
+	<!-- jGrowl-->
+	<script type="text/javascript" src="<?=static_url('js/jGrowl/jquery.jgrowl_minimized.js');?>"></script>
+	<link href="<?=static_url('js/jGrowl/jquery.jgrowl.css');?>" type="text/css" rel="stylesheet" />
 	
 	
 	<script type="text/javascript" src="<?=static_url('js/global.js');?>"></script>

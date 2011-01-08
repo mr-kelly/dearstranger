@@ -11,11 +11,18 @@
 			<?php
 				// 这里注意， 不是使用!=， 复杂的逻辑关系.....
 				//echo is_feel( $user_id );  用来测试
-				if ( is_feel( $user_id ) == 'mutual' || is_feel(  $user_id ) == 'from'  ) :
+				if ( is_feel(  $user_id ) == 'from'  ) :
 			?>
 			<a title="对他/她的没feel了？" onclick="return feel_btn_fn(this);" class="tooltip feel_it unfeel_btn vtip" href="<?=site_url('user/ajax_feel/' .  $user_id );?>">
 				<!--unfeel-->
 			</a>
+			<?php
+				elseif ( is_feel( $user_id ) == 'mutual' ):
+					// 双方心动, 显示双方心动的图片\按钮
+			?>
+				<a title="互相心动. 按这里会取消对他的心动." onclick="return feel_btn_fn(this);" class="tooltip feel_it mutual_feel_btn vtip" href="<?=site_url('user/ajax_feel/' .  $user_id );?>">
+					<!--mutual-->
+				</a>
 			<?php
 				elseif ( is_feel(  $user_id ) == 'same' ):
 					// 当前用户显示自己， 不显示"有feel"按钮

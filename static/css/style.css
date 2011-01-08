@@ -82,7 +82,9 @@ input {
 	outline: none;
 }
 
-
+.float_left {
+	float: left;
+}
 .top {
 	vertical-align:top;
 }
@@ -149,6 +151,11 @@ input {
 }
 .unfeel_btn {
 	background-position: 0 -23px;
+	height: 23px;
+	width: 82px;
+}
+.mutual_feel_btn {
+	background: url(../images/mutual_youfeel.gif) no-repeat;
 	height: 23px;
 	width: 82px;
 }
@@ -452,4 +459,7 @@ form p {
 }
 .icon_face {
 	background-position: 0 -1737px;
+}
+.icon_favorite {
+	background-position: 0 -2635px;
 }

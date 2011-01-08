@@ -11,7 +11,7 @@
 		 		
 		 		$invited_by 被谁邀请~ 邀请后通知已经被邀请
 		 */
-		function index( $invited_by = null ) {
+		function index( $invited_by = null, $redirect = null ) {
 			
 			$this->load->library('T_sina');
 			$this->load->model('user_model');
@@ -125,9 +125,15 @@
 					 			但为创建user_profile~ 提供资料填写~
 					 */
 					 
+					 if ( ! $_GET['redirect'] ) {
+						// 没设置redirect~ 那么去到首页
+						 redirect( '/' ); 
+					 } else {
+					 	redirect( $_GET['redirect'] );
+					 }
 					 
 					 
-					redirect( '/' );
+					
 					
 				}
 				
@@ -152,8 +158,13 @@
 			$authorize_url = $this->t_sina->getAuthorizeURL( 'http://' . $_SERVER["HTTP_HOST"] . site_url('oauth/index') );
 			
 			
-			if ( isset($_GET['invited_by']) ) {
+			if ( isset($_GET['invited_by']) && $_GET['invited_by'] != 'false' ) {
 				$authorize_url .= '/' . $_GET['invited_by'] ;
+			}
+			
+			// redirect, 是否登录后转走
+			if ( isset( $_GET['redirect'] ) ) {
+				$authorize_url .= '?redirect='. $_GET['redirect'] ;
 			}
 			
 			redirect( $authorize_url );

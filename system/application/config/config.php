@@ -66,7 +66,7 @@ $config['static_url'] = $config['base_url'] . 'static/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = "index.php";
+$config['index_page'] = "";
 
 /*
 |--------------------------------------------------------------------------

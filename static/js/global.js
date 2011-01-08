@@ -44,7 +44,7 @@ function rand() {
  *	JS形式的登录转移~
  */
 function login_redirect() {
-	window.location = $home_page + 'user/login';
+	window.location = $home_page + 'user/login?redirect=' + window.location.href;
 }
 
 // feel按钮的js处理
@@ -80,6 +80,49 @@ function feel_btn_fn( $which ) {
    return false;
    
 }
+
+
+
+$(function(){
+	/**
+	 *	添加到心动收藏
+	 */
+	$('#add_favorite_btn').click(function(){
+		$.getJSON( $(this).attr('href'), function(data) {
+			
+			if ( data.status == 1 ) {
+				//alert('已添加到心动收藏');
+				$.jGrowl( data.info );
+			} else {
+				//alert('添加心动收藏失败');
+				$.jGrowl( data.info );
+			}
+			
+			
+		});
+		
+		return false;
+	});
+	
+	/**
+	 *	从心动收藏夹删除
+	 */
+	 $('.delete_favorite_btn').click(function(){
+	 	$.getJSON( $(this).attr('href'), function(data) {
+	 		if ( data.status == 1 ) {
+	 			$.jGrowl( data.info );
+	 		} else {
+	 			$.jGrowl( data.info );
+	 		}
+	 	});
+	 	
+	 	$(this).parent().parent().parent().hide();
+	 	return false;
+	 });
+	
+	//$('#add_favorite_btn').fancybox();
+	
+});
 						
 // 
 // 					   $(function(){

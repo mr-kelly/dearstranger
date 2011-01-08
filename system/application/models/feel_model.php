@@ -64,6 +64,28 @@
 		}
 		
 		/**
+		 *	内涵指数排行
+		 */
+		function inner_index_ranking_users( $limit = 20 ) {
+			$this->load->model('user_model');
+			$ci =& get_instance();
+			
+			$this->db->order_by('inner_index desc');
+			// profiles
+			$query = $this->db->get('user_profiles', $limit );
+			$users = $query->result_array();
+			
+			
+			$return_users = array();
+			foreach ( $users as $user ) {
+				array_push( $return_users, $ci->user_model->get_user_by_id( $user['user_id'] ) );
+			}
+			
+			return $return_users;
+			
+		}
+		
+		/**
 		 *	获得该用户， 有feel 的对象
 		 */
 		function to_feel_people( $user_id ) {
@@ -81,6 +103,17 @@
 			}
 			
 			return $users;
+		}
+		
+		/**
+		 *	获取该用户 心动的对象数目,用于判断是否花心!
+		 */
+		function to_feel_count( $user_id ) {
+			$query = $this->db->get_where('feel', array(
+				'from_user_id' => $user_id,
+			));
+			
+			return $query->num_rows();
 		}
 		
 		/**

@@ -13,7 +13,14 @@
 				
 				<div class="clearboth"></div>
 			</div>
-
+			
+			
+			<div class="sidebar_widget">
+				<h2>公告栏</h2>
+				<p>
+					心动正在进行功能整改, 包括添加内涵指数排行,花心(心动超过5人)标志, 互相心动等等新功能. 
+				</p>
+			</div>
 			<div class="sidebar_widget">
 				<h2>
 					<?php 
@@ -89,6 +96,12 @@
 								</li>
 								<li>
 									<a class="tooltip icon icon_face" title="更换你的个人头像"  href="<?=site_url('user/set_avatar');?>">更换照片</a>
+								</li>
+								
+								<li>
+									<a class="tooltip icon icon_favorite" title="你的心动收藏夹" href="<?=site_url('user/favorites');?>">
+										心动收藏
+									</a>
 								</li>
 								
 								<li>

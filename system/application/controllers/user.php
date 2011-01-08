@@ -48,6 +48,13 @@
 		 */
 		function login() {
 			$data = array();
+			
+			if ( isset( $_GET['redirect'] ) ) {
+				$data['redirect'] = $_GET['redirect'];
+			//	redirect( $_GET['redirect'] );
+			}
+			
+			
 			kk_show_view('user/login_view', $data);
 		}
 		
@@ -305,6 +312,22 @@
 			
 		}
 		
+
+		/**
+		 *	心动喜爱收藏夹
+		 */
+		function favorites() {
+			login_redirect();
+			$current_user = get_user();
+			$this->load->model('favorite_model');
+			$f_users = $this->favorite_model->get_favorites( $current_user['id'] );
+			
+			$data['f_users'] = $f_users;
+			
+			kk_show_view( 'user/favorites_view', $data );
+		}
+		
+		
 		/**
 		 *	发布微博公布你的“内涵指数”
 		 */
@@ -356,7 +379,10 @@
 			$random_users = $this->user_model->get_random_users();
 			
 			
-			kk_show_view('general/users_list_view', array( 'users_list'=>$random_users,)) ;
+			kk_show_view('general/users_list_view', array( 'users_list'=>$random_users,
+															'refresh_playground_btn' => true,
+															'more_btn' => false,
+															)) ;
 		}
 		
 		/**
@@ -499,5 +525,30 @@
 			}
 			
 			//echo json_encode( $result );
+		}
+		
+		function ajax_add_favorite( $user_id, $favorite_user_id ) {
+			login_redirect();
+			
+			$this->load->model('favorite_model');
+			
+			$f_id = $this->favorite_model->add_favorite( $user_id, $favorite_user_id );
+			
+			if ( $f_id ) {
+				ajaxReturn( array(
+					'favorite_id'=>$f_id,
+					), '已添加到收藏夹!', 1);
+			} else {
+				ajaxReturn( null, '无法添加，已经存在', 0);
+			}
+		}
+		
+		function ajax_delete_favorite( $favarite_user_id ) {
+			login_redirect();
+			$current_user = get_user();
+			
+			$this->load->model('favorite_model');
+			$s = $this->favorite_model->delete_favorite( $current_user['id'], $favarite_user_id );
+			ajaxReturn( null, '已删除', 0);
 		}
 	}

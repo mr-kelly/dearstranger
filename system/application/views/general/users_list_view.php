@@ -1,8 +1,32 @@
-					<?php if ( !isset($more_btn) || $more_btn ): ?>
+					<?php
+						if( isset($refresh_playground_btn) && $refresh_playground_btn ): 
+						// 刷新 广场 选项卡
+					?>
+						<script>
+							function refresh_tab() {
+								$('#ui-tabs-1').load("<?=site_url('user/ajax_random_users?ajax=' . rand() );?>");
+								return false;
+							}
+						</script>
+						<div>
+							<a href="#" id="refresh_tab_btn" class="btn" onclick="return refresh_tab();">
+								<span><span>刷新广场</span></span>
+							</a>
+						</div>
+					<?php endif; ?>
+					
+					
+					
+					
+					<?php
+						if ( !isset($more_btn) || $more_btn ): 
+						// 寻找\更多 按钮
+					?>
 					<div>
 						<a href="<?=site_url('search');?>" class="btn"><span><span>寻找更多意中人</span></span></a>
 					</div>
 					<?php endif; ?>
+					
 
 					<?php
 						foreach( $users_list as $user ):
@@ -34,10 +58,26 @@
 									
 								</a>
 								
+
+								
+								
 								<?php // 如果设置了手机，显示手机标志 
 									if ( isset( $user['profile']['phone'] ) && $user['profile']['phone'] != '' ) :
 								?>
 								<img width="12" class="tooltip" title="手机绑定用户" src="<?=static_url('images/phoneicon.jpg');?>" />
+								<?php
+									endif;
+								?>
+								
+								
+								<?php
+									// 判断是否花心~  获取心动了多少人
+									$ci =& get_instance();
+									$ci->load->model('feel_model');
+									
+									if ( $ci->feel_model->to_feel_count( $user['id'] ) > 5 ):
+								?>
+									<img src="<?=static_url('images/flowericon.gif');?>" width="12" class="tooltip" title="心动了超过5个人,花心." />
 								<?php
 									endif;
 								?>

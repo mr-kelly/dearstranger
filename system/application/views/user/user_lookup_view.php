@@ -18,6 +18,22 @@
 				<img style="margin-bottom:-5px;" height="22" src="<?=static_url('images/inner_index.gif');?>" />
 				<span><?=$user['profile']['inner_index'];?>%</span>
 			</div>
+			
+			<?php
+				// 判断是否花心~  获取心动了多少人
+				$ci =& get_instance();
+				$ci->load->model('feel_model');
+				
+				if ( $ci->feel_model->to_feel_count( $user['id'] ) > 5 ):
+			?>
+				<div>
+					<img src="<?=static_url('images/flowericon.gif');?>" width="12" class="tooltip" title="心动了超过5个人,花心." />
+					此人花心
+				</div>
+			<?php
+				endif;
+			?>
+			
 			<div>
 				<a class="btn" href="<?=site_url('user/show_inner_index');?>">
 					<span><span>告诉大家你的内涵指数</span></span>
@@ -28,6 +44,12 @@
 			<?php
 				$this->load->view('general/feel_btn_view', array( 'user_id' => $user['id'] ) );
 			?>
+			
+			<div>
+				<a id="add_favorite_btn" href="<?=site_url('user/ajax_add_favorite/' . $current_user['id'] . '/' .$user['id'] );?>">
+					添加到心动收藏
+				</a>
+			</div>
 		</div>
 		
 		<div class="user_profile">
